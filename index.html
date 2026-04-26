@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToolNest Studio | Free Everyday Tools in One Smart Workspace</title>
+    <meta
+      name="description"
+      content="ToolNest Studio is a modern free tools website with a resume builder, image converter, PDF tools, text formatter, AI prompt helper, budget calculator, bio link generator, and more."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#home">
+          <span class="brand-mark">TN</span>
+          <span>
+            <strong>ToolNest Studio</strong>
+            <small>One workspace. Many free tools.</small>
+          </span>
+        </a>
+
+        <nav class="topnav" aria-label="Primary">
+          <a href="#tools">Tools</a>
+          <a href="#why">Why It Wins</a>
+          <a href="#faq">FAQ</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="toolbar">
+          <label class="control compact">
+            <span>Theme</span>
+            <select id="themeMode">
+              <option value="system">System</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </label>
+
+          <label class="control compact">
+            <span>Accent</span>
+            <select id="accentPicker">
+              <option value="sunburst">Sunburst</option>
+              <option value="lagoon">Lagoon</option>
+              <option value="mint">Mint</option>
+              <option value="ember">Ember</option>
+            </select>
+          </label>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" id="home">
+          <div class="hero-copy">
+            <p class="eyebrow">Low-maintenance website concept with high repeat usage</p>
+            <h1>Launch a modern free tools website people keep coming back to.</h1>
+            <p class="hero-text">
+              This starter packs seven sticky utilities into one search-friendly product:
+              resume building, image conversion, PDF workflows, text cleanup, AI prompt
+              generation, budgeting, and link-in-bio creation.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button primary" href="#tools">Explore the tools</a>
+              <a class="button secondary" href="#tool-suite">Jump into the workspace</a>
+            </div>
+
+            <div class="hero-stats">
+              <article>
+                <strong>7</strong>
+                <span>core tools included</span>
+              </article>
+              <article>
+                <strong>100%</strong>
+                <span>client-side interaction</span>
+              </article>
+              <article>
+                <strong>3</strong>
+                <span>theme modes ready</span>
+              </article>
+            </div>
+          </div>
+
+          <div class="hero-panel">
+            <div class="panel-card">
+              <p class="panel-label">Built for scale</p>
+              <h2>One homepage. Many search entry points.</h2>
+              <ul class="feature-list">
+                <li>Fast-loading sections for high-intent utility traffic</li>
+                <li>Saved preferences, favorites, and drafts in local storage</li>
+                <li>Theme-ready code using reusable design tokens</li>
+                <li>Responsive layout for mobile-heavy audiences</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="trust-strip" aria-label="Highlights">
+          <div class="pill">Resume builder</div>
+          <div class="pill">Image converter</div>
+          <div class="pill">PDF merge and extract</div>
+          <div class="pill">Text formatter</div>
+          <div class="pill">AI prompt helper</div>
+          <div class="pill">Budget calculator</div>
+          <div class="pill">Bio link generator</div>
+        </section>
+
+        <section class="tools-overview" id="tools">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Tool directory</p>
+              <h2>Everything lives in one polished interface.</h2>
+            </div>
+            <label class="control search-control">
+              <span>Search tools</span>
+              <input
+                id="toolSearch"
+                type="search"
+                placeholder="Search resume, PDF, prompt, budget..."
+              />
+            </label>
+          </div>
+
+          <div class="tool-grid" id="toolGrid">
+            <article class="tool-card" data-tool-name="resume builder cv job application">
+              <div class="tool-card-head">
+                <h3>Resume Builder</h3>
+                <button class="favorite-toggle" data-favorite="resume-builder" aria-label="Favorite Resume Builder">
+                  +
+                </button>
+              </div>
+              <p>Create a polished single-page resume with live preview and export options.</p>
+              <a href="#resume-builder" class="text-link">Open tool</a>
+            </article>
+
+            <article class="tool-card" data-tool-name="image converter jpg png webp">
+              <div class="tool-card-head">
+                <h3>Image Converter</h3>
+                <button class="favorite-toggle" data-favorite="image-converter" aria-label="Favorite Image Converter">
+                  +
+                </button>
+              </div>
+              <p>Convert uploaded images to PNG, JPEG, or WebP with resize and quality controls.</p>
+              <a href="#image-converter" class="text-link">Open tool</a>
+            </article>
+
+            <article class="tool-card" data-tool-name="pdf tools merge extract pages">
+              <div class="tool-card-head">
+                <h3>PDF Tools</h3>
+                <button class="favorite-toggle" data-favorite="pdf-tools" aria-label="Favorite PDF Tools">
+                  +
+                </button>
+              </div>
+              <p>Merge multiple PDFs and extract a page range into a new document in-browser.</p>
+              <a href="#pdf-tools" class="text-link">Open tool</a>
+            </article>
+
+            <article class="tool-card" data-tool-name="text formatter case converter writer">
+              <div class="tool-card-head">
+                <h3>Text Formatter</h3>
+                <button class="favorite-toggle" data-favorite="text-formatter" aria-label="Favorite Text Formatter">
+                  +
+                </button>
+              </div>
+              <p>Clean, transform, and analyze text for quick writing and editing workflows.</p>
+              <a href="#text-formatter" class="text-link">Open tool</a>
+            </article>
+
+            <article class="tool-card" data-tool-name="ai prompt helper generator chatgpt">
+              <div class="tool-card-head">
+                <h3>AI Prompt Helper</h3>
+                <button class="favorite-toggle" data-favorite="prompt-helper" aria-label="Favorite AI Prompt Helper">
+                  +
+                </button>
+              </div>
+              <p>Generate stronger prompts with structure for role, constraints, tone, and output.</p>
+              <a href="#prompt-helper" class="text-link">Open tool</a>
+            </article>
+
+            <article class="tool-card" data-tool-name="budget calculator finance savings planner">
+              <div class="tool-card-head">
+                <h3>Budget Calculator</h3>
+                <button class="favorite-toggle" data-favorite="budget-calculator" aria-label="Favorite Budget Calculator">
+                  +
+                </button>
+              </div>
+              <p>Track monthly income, expenses, savings rate, and category-level spending mix.</p>
+              <a href="#budget-calculator" class="text-link">Open tool</a>
+            </article>
+
+            <article class="tool-card" data-tool-name="bio link generator creator profile page">
+              <div class="tool-card-head">
+                <h3>Bio Link Generator</h3>
+                <button class="favorite-toggle" data-favorite="bio-link-generator" aria-label="Favorite Bio Link Generator">
+                  +
+                </button>
+              </div>
+              <p>Draft a compact profile page with links, accent colors, and exportable code.</p>
+              <a href="#bio-link-generator" class="text-link">Open tool</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="workspace" id="tool-suite">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Interactive suite</p>
+              <h2>Try the product-ready tool workspace.</h2>
+            </div>
+            <p class="section-note">
+              Favorites, theme preferences, and selected drafts stay saved on this device.
+            </p>
+          </div>
+
+          <div class="workspace-grid">
+            <article class="workspace-card" id="resume-builder">
+              <div class="workspace-header">
+                <h3>Resume Builder</h3>
+                <div class="workspace-actions">
+                  <button class="button tertiary" id="saveResumeDraft">Save draft</button>
+                  <button class="button tertiary" id="downloadResume">Download HTML</button>
+                  <button class="button tertiary" id="printResume">Print / PDF</button>
+                </div>
+              </div>
+
+              <div class="split-panel">
+                <form class="stack" id="resumeForm">
+                  <label class="control">
+                    <span>Full name</span>
+                    <input name="name" value="Avery Morgan" />
+                  </label>
+                  <label class="control">
+                    <span>Professional title</span>
+                    <input name="title" value="Product Designer & Frontend Builder" />
+                  </label>
+                  <div class="duo">
+                    <label class="control">
+                      <span>Email</span>
+                      <input name="email" value="avery@example.com" />
+                    </label>
+                    <label class="control">
+                      <span>Phone</span>
+                      <input name="phone" value="+1 (555) 208-1142" />
+                    </label>
+                  </div>
+                  <label class="control">
+                    <span>Summary</span>
+                    <textarea name="summary" rows="5">I design thoughtful digital products, prototype quickly, and ship interfaces that balance clarity, polish, and conversion.</textarea>
+                  </label>
+                  <label class="control">
+                    <span>Skills (comma separated)</span>
+                    <textarea name="skills" rows="3">Product strategy, UI design, React, Design systems, User research, Prototyping</textarea>
+                  </label>
+                  <label class="control">
+                    <span>Experience (one line per role, format: Role | Company | Dates | Achievement)</span>
+                    <textarea name="experience" rows="6">Senior Product Designer | Northstar Labs | 2023-Now | Led design for a B2B dashboard that increased activation by 22%
+Product Designer | Hush Studio | 2020-2023 | Built scalable component systems for startup clients
+UI Designer | Pixel Harbor | 2018-2020 | Delivered web experiences for e-commerce and SaaS brands</textarea>
+                  </label>
+                </form>
+
+                <div class="preview-card" id="resumePreview"></div>
+              </div>
+            </article>
+
+            <article class="workspace-card" id="image-converter">
+              <div class="workspace-header">
+                <h3>Image Converter</h3>
+              </div>
+
+              <div class="stack">
+                <div class="duo">
+                  <label class="control">
+                    <span>Upload images</span>
+                    <input type="file" id="imageFiles" accept="image/*" multiple />
+                  </label>
+                  <label class="control">
+                    <span>Convert to</span>
+                    <select id="imageFormat">
+                      <option value="image/png">PNG</option>
+                      <option value="image/jpeg">JPEG</option>
+                      <option value="image/webp">WebP</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div class="trio">
+                  <label class="control">
+                    <span>Quality</span>
+                    <input type="range" id="imageQuality" min="0.3" max="1" step="0.05" value="0.9" />
+                  </label>
+                  <label class="control">
+                    <span>Max width (px)</span>
+                    <input type="number" id="imageMaxWidth" min="100" placeholder="Keep original" />
+                  </label>
+                  <div class="control action-box">
+                    <span>Convert</span>
+                    <button class="button primary" id="convertImages">Run conversion</button>
+                  </div>
+                </div>
+
+                <div id="imageResults" class="result-grid"></div>
+              </div>
+            </article>
+
+            <article class="workspace-card" id="pdf-tools">
+              <div class="workspace-header">
+                <h3>PDF Tools</h3>
+              </div>
+
+              <div class="stack">
+                <label class="control">
+                  <span>Select PDF files</span>
+                  <input type="file" id="pdfFiles" accept="application/pdf" multiple />
+                </label>
+
+                <div class="duo">
+                  <div class="info-card">
+                    <h4>Merge PDFs</h4>
+                    <p>Combine multiple PDF files into one document.</p>
+                    <button class="button primary" id="mergePdfs">Merge and download</button>
+                  </div>
+
+                  <div class="info-card">
+                    <h4>Extract page range</h4>
+                    <label class="control">
+                      <span>Pages from first PDF (example: 1-3)</span>
+                      <input id="pdfRange" placeholder="1-2" />
+                    </label>
+                    <button class="button primary" id="extractPdfRange">Extract range</button>
+                  </div>
+                </div>
+
+                <div class="status-box" id="pdfStatus">Select one or more PDF files to begin.</div>
+              </div>
+            </article>
+
+            <article class="workspace-card" id="text-formatter">
+              <div class="workspace-header">
+                <h3>Text Formatter</h3>
+                <div class="workspace-actions">
+                  <button class="button tertiary" id="copyFormattedText">Copy output</button>
+                </div>
+              </div>
+
+              <div class="stack">
+                <label class="control">
+                  <span>Input text</span>
+                  <textarea id="textInput" rows="8">Paste text here to clean and reformat it.</textarea>
+                </label>
+
+                <div class="button-row wrap">
+                  <button class="button tertiary text-action" data-action="upper">UPPERCASE</button>
+                  <button class="button tertiary text-action" data-action="lower">lowercase</button>
+                  <button class="button tertiary text-action" data-action="title">Title Case</button>
+                  <button class="button tertiary text-action" data-action="sentence">Sentence case</button>
+                  <button class="button tertiary text-action" data-action="slug">slug-format</button>
+                  <button class="button tertiary text-action" data-action="trim">Trim spacing</button>
+                  <button class="button tertiary text-action" data-action="dedupe">Remove duplicate lines</button>
+                </div>
+
+                <label class="control">
+                  <span>Output</span>
+                  <textarea id="textOutput" rows="8" readonly></textarea>
+                </label>
+
+                <div class="metric-row" id="textStats"></div>
+              </div>
+            </article>
+
+            <article class="workspace-card" id="prompt-helper">
+              <div class="workspace-header">
+                <h3>AI Prompt Helper</h3>
+                <div class="workspace-actions">
+                  <button class="button tertiary" id="copyPrompt">Copy prompt</button>
+                </div>
+              </div>
+
+              <div class="stack">
+                <div class="duo">
+                  <label class="control">
+                    <span>Goal</span>
+                    <input id="promptGoal" value="Write a landing page for a budgeting app" />
+                  </label>
+                  <label class="control">
+                    <span>Audience</span>
+                    <input id="promptAudience" value="first-time freelancers" />
+                  </label>
+                </div>
+
+                <div class="duo">
+                  <label class="control">
+                    <span>Tone</span>
+                    <input id="promptTone" value="clear, warm, confident" />
+                  </label>
+                  <label class="control">
+                    <span>Output format</span>
+                    <input id="promptFormat" value="headline ideas, hero copy, CTA suggestions" />
+                  </label>
+                </div>
+
+                <label class="control">
+                  <span>Constraints</span>
+                  <textarea id="promptConstraints" rows="4">Keep it concise, avoid hype, include practical benefits, and write at an easy reading level.</textarea>
+                </label>
+
+                <div class="button-row wrap">
+                  <button class="button primary prompt-template" data-template="structured">Structured prompt</button>
+                  <button class="button tertiary prompt-template" data-template="expert">Expert prompt</button>
+                  <button class="button tertiary prompt-template" data-template="system">System prompt</button>
+                  <button class="button tertiary prompt-template" data-template="brief">Brief prompt</button>
+                </div>
+
+                <label class="control">
+                  <span>Generated prompt</span>
+                  <textarea id="promptOutput" rows="9" readonly></textarea>
+                </label>
+              </div>
+            </article>
+
+            <article class="workspace-card" id="budget-calculator">
+              <div class="workspace-header">
+                <h3>Budget Calculator</h3>
+                <div class="workspace-actions">
+                  <button class="button tertiary" id="saveBudget">Save budget</button>
+                  <button class="button tertiary" id="addExpense">Add expense</button>
+                </div>
+              </div>
+
+              <div class="stack">
+                <label class="control">
+                  <span>Monthly income</span>
+                  <input id="budgetIncome" type="number" value="5000" min="0" />
+                </label>
+
+                <div class="expense-list" id="expenseList"></div>
+
+                <div class="summary-panel" id="budgetSummary"></div>
+              </div>
+            </article>
+
+            <article class="workspace-card" id="bio-link-generator">
+              <div class="workspace-header">
+                <h3>Bio Link Generator</h3>
+                <div class="workspace-actions">
+                  <button class="button tertiary" id="saveBioLinks">Save profile</button>
+                  <button class="button tertiary" id="addBioLink">Add link</button>
+                  <button class="button tertiary" id="exportBioHtml">Export HTML</button>
+                </div>
+              </div>
+
+              <div class="split-panel">
+                <div class="stack">
+                  <label class="control">
+                    <span>Name</span>
+                    <input id="bioName" value="Avery Creates" />
+                  </label>
+                  <label class="control">
+                    <span>Handle</span>
+                    <input id="bioHandle" value="@averycreates" />
+                  </label>
+                  <label class="control">
+                    <span>Bio</span>
+                    <textarea id="bioDescription" rows="4">Designer, builder, and educator sharing tools, templates, and useful resources.</textarea>
+                  </label>
+                  <div class="duo">
+                    <label class="control">
+                      <span>Accent color</span>
+                      <input id="bioAccent" type="color" value="#f97316" />
+                    </label>
+                    <label class="control">
+                      <span>Background color</span>
+                      <input id="bioBackground" type="color" value="#111827" />
+                    </label>
+                  </div>
+                  <div class="link-stack" id="bioLinksList"></div>
+                </div>
+
+                <div class="preview-card bio-preview-wrap">
+                  <div id="bioPreview" class="bio-preview"></div>
+                  <label class="control">
+                    <span>Exported HTML snippet</span>
+                    <textarea id="bioHtmlOutput" rows="8" readonly></textarea>
+                  </label>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="why-section" id="why">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Why this website model works</p>
+              <h2>Built to be useful, searchable, and easy to maintain.</h2>
+            </div>
+          </div>
+
+          <div class="three-up">
+            <article class="info-card">
+              <h3>Evergreen demand</h3>
+              <p>
+                Resume help, format conversion, budgeting, and prompt drafting solve repeat
+                needs across students, creators, and professionals.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>SEO-friendly architecture</h3>
+              <p>
+                Each tool can become its own landing page later, giving you many ways to earn
+                traffic from search without rebuilding the product.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Low ops overhead</h3>
+              <p>
+                Most interactions run in the browser, which reduces backend complexity and keeps
+                maintenance light compared with user-heavy platforms.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="faq-section" id="faq">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">FAQ</p>
+              <h2>What to add next if you want to grow this into a business.</h2>
+            </div>
+          </div>
+
+          <div class="faq-list">
+            <details open>
+              <summary>How would this scale into a bigger product?</summary>
+              <p>
+                Start by turning each tool into a dedicated SEO page, then add accounts, saved
+                cloud history, premium exports, templates, and API-backed AI features only after
+                traffic proves demand.
+              </p>
+            </details>
+            <details>
+              <summary>What other features fit this model?</summary>
+              <p>
+                Add QR code generation, invoice templates, favicon makers, password generators,
+                unit converters, markdown preview, and email signature builders.
+              </p>
+            </details>
+            <details>
+              <summary>Is the PDF feature fully browser-based?</summary>
+              <p>
+                Yes. It uses `pdf-lib` in the browser for merge and page extraction. Very advanced
+                compression or OCR would need a backend or heavier libraries.
+              </p>
+            </details>
+          </div>
+        </section>
+
+        <section class="legal-highlight" id="policies">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Trust & policies</p>
+              <h2>Essential pages for users, advertisers, and site reviews.</h2>
+            </div>
+          </div>
+
+          <div class="three-up">
+            <article class="info-card">
+              <h3>Clear legal pages</h3>
+              <p>
+                Visitors can quickly find your privacy policy, terms and conditions,
+                disclaimer, and contact details from every page.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Transparent site purpose</h3>
+              <p>
+                The About page explains what ToolNest Studio does, who it is for, and how
+                the tools should be used responsibly.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>AdSense-ready structure</h3>
+              <p>
+                Strong navigation, contact information, and policy coverage help make the
+                site feel complete and legitimate for review.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-brand">
+          <strong>ToolNest Studio</strong>
+          <p>
+            Free everyday tools for resumes, images, PDF workflows, writing, budgeting,
+            prompts, and creator links.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-and-conditions.html">Terms & Conditions</a>
+          <a href="disclaimer.html">Disclaimer</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
