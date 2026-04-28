@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace https://www.toolneststudio.com with your real domain before going live.
+Sitemap: https://www.toolneststudio.com/sitemap.xml

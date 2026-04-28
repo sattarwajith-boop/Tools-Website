@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | ToolNest Studio</title>
+  <meta name="description" content="Learn about ToolNest Studio — a free browser-based platform of 13+ AI, writing, document, finance, and creator tools built for speed and privacy."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#030712;--bg2:#0a0f1e;--surface:rgba(255,255,255,0.04);--surface2:rgba(255,255,255,0.07);--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;--cyan:#06b6d4;--cyan2:#67e8f9;--violet:#8b5cf6;--violet2:#a78bfa;--pink:#ec4899;--emerald:#10b981;--amber:#f59e0b;--font:'Outfit',sans-serif}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden;min-height:100vh}
+    ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:3px}
+    .grid-bg{position:fixed;inset:0;background-image:linear-gradient(rgba(6,182,212,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(6,182,212,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0}
+    .orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0}
+    .orb-1{width:600px;height:600px;background:rgba(6,182,212,0.05);top:-200px;right:-150px}
+    .orb-2{width:500px;height:500px;background:rgba(139,92,246,0.05);bottom:-100px;left:-120px}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(3,7,18,0.7);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);transition:background 0.3s}
+    .nav-brand{display:flex;align-items:center;gap:0.75rem;text-decoration:none}
+    .nav-logo{width:38px;height:38px;background:linear-gradient(135deg,var(--cyan),var(--violet));border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.875rem;color:#fff;box-shadow:0 0 20px rgba(6,182,212,0.3)}
+    .nav-name{font-weight:700;font-size:1.1rem;color:var(--text);letter-spacing:-0.02em}
+    .nav-links{display:flex;align-items:center;gap:0.25rem;list-style:none}
+    .nav-links a{color:var(--text2);text-decoration:none;font-size:0.875rem;font-weight:500;padding:0.5rem 0.875rem;border-radius:8px;transition:color 0.2s,background 0.2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--text);background:rgba(255,255,255,0.06)}
+    .nav-cta{background:linear-gradient(135deg,var(--cyan),var(--violet))!important;color:#fff!important;font-weight:600!important;box-shadow:0 0 20px rgba(6,182,212,0.25)}
+    main{position:relative;z-index:2;padding-top:72px}
+    .container{max-width:1100px;margin:0 auto;padding:0 2rem}
+    .page-hero{padding:5rem 2rem 4rem;max-width:900px;margin:0 auto;text-align:center}
+    .breadcrumb{display:flex;align-items:center;justify-content:center;gap:0.5rem;font-size:0.8rem;color:var(--text3);margin-bottom:1.5rem}
+    .breadcrumb a{color:var(--cyan);text-decoration:none}
+    .hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.3);border-radius:100px;padding:0.375rem 1rem;font-size:0.75rem;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1.25rem}
+    .hero-badge span{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 1.5s infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+    h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;letter-spacing:-0.04em;line-height:1.05;margin-bottom:1.25rem}
+    .gradient-text{background:linear-gradient(135deg,var(--cyan),var(--violet2),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-lead{font-size:1.1rem;color:var(--text2);line-height:1.7;max-width:640px;margin:0 auto}
+    .stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:3rem 0}
+    .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:1.75rem 1.25rem;text-align:center;transition:border-color 0.3s,transform 0.3s;position:relative;overflow:hidden}
+    .stat-card:hover{border-color:rgba(6,182,212,0.3);transform:translateY(-3px)}
+    .stat-card strong{display:block;font-size:2.25rem;font-weight:900;letter-spacing:-0.05em;background:linear-gradient(135deg,var(--cyan),var(--violet2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.375rem}
+    .stat-card span{font-size:0.82rem;color:var(--text3);font-weight:500}
+    .section{padding:5rem 0}
+    .section-eyebrow{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--cyan);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem}
+    .section-eyebrow::before{content:'';width:2rem;height:1px;background:var(--cyan)}
+    .section-title{font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;letter-spacing:-0.04em;line-height:1.1;margin-bottom:1rem}
+    .section-desc{font-size:1rem;color:var(--text2);line-height:1.7;max-width:520px}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    .feature-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:1.75rem;transition:border-color 0.3s,transform 0.3s;position:relative;overflow:hidden}
+    .feature-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--violet));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+    .feature-card:hover{border-color:rgba(6,182,212,0.25);transform:translateY(-3px)}
+    .feature-card:hover::after{transform:scaleX(1)}
+    .fc-icon{width:48px;height:48px;border-radius:12px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2);display:flex;align-items:center;justify-content:center;font-size:1.375rem;margin-bottom:1rem}
+    .feature-card h3{font-size:1rem;font-weight:700;margin-bottom:0.5rem;letter-spacing:-0.02em}
+    .feature-card p{font-size:0.85rem;color:var(--text2);line-height:1.6}
+    .fc-violet .fc-icon{background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.2)}
+    .fc-pink .fc-icon{background:rgba(236,72,153,0.1);border-color:rgba(236,72,153,0.2)}
+    .fc-emerald .fc-icon{background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.2)}
+    .fc-amber .fc-icon{background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.2)}
+    .feat-2col{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .mission{background:linear-gradient(135deg,rgba(6,182,212,0.07),rgba(139,92,246,0.07));border:1px solid rgba(6,182,212,0.15);border-radius:28px;padding:4rem 3rem;text-align:center;margin:4rem 0;position:relative;overflow:hidden}
+    .mission::before{content:'"';position:absolute;top:-1rem;left:2rem;font-size:8rem;font-weight:900;color:rgba(6,182,212,0.06);line-height:1;font-family:serif}
+    .mission h2{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:800;letter-spacing:-0.04em;margin-bottom:1.25rem}
+    .mission p{font-size:1.05rem;color:var(--text2);line-height:1.75;max-width:680px;margin:0 auto}
+    .values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+    .value-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:1.5rem;display:flex;gap:1.25rem;align-items:flex-start;transition:border-color 0.3s,transform 0.3s}
+    .value-card:hover{border-color:rgba(6,182,212,0.25);transform:translateY(-2px)}
+    .v-icon{width:44px;height:44px;border-radius:12px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2);display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+    .value-card h4{font-weight:700;font-size:0.95rem;margin-bottom:0.375rem}
+    .value-card p{font-size:0.83rem;color:var(--text2);line-height:1.6}
+    .timeline{display:grid;gap:0;position:relative}
+    .timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--cyan),var(--violet),transparent)}
+    .tl-item{display:flex;gap:1.5rem;padding-bottom:2rem;position:relative}
+    .tl-dot{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--violet));display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;box-shadow:0 0 16px rgba(6,182,212,0.4);z-index:1}
+    .tl-year{font-size:0.7rem;color:var(--cyan);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;padding-top:0.5rem}
+    .tl-content h4{font-weight:700;font-size:0.95rem;margin-bottom:0.375rem;padding-top:.5rem}
+    .tl-content p{font-size:0.83rem;color:var(--text2);line-height:1.6}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin:0}
+    .cta-strip{background:linear-gradient(135deg,rgba(6,182,212,0.08),rgba(139,92,246,0.08));border:1px solid rgba(6,182,212,0.15);border-radius:24px;padding:3.5rem 2rem;text-align:center;margin-bottom:4rem}
+    .cta-strip h3{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;letter-spacing:-0.04em;margin-bottom:0.75rem}
+    .cta-strip p{font-size:0.95rem;color:var(--text2);margin-bottom:2rem}
+    .btn-group{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.875rem 1.75rem;border-radius:12px;font-family:var(--font);font-weight:600;font-size:0.95rem;cursor:pointer;border:none;text-decoration:none;transition:all 0.2s}
+    .btn-primary{background:linear-gradient(135deg,var(--cyan),var(--violet));color:#fff;box-shadow:0 0 30px rgba(6,182,212,0.3)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(6,182,212,0.5)}
+    .btn-ghost{background:var(--surface);color:var(--text);border:1px solid var(--border2)}
+    .btn-ghost:hover{background:var(--surface2)}
+    footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2rem 2rem;position:relative;z-index:2}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;flex-wrap:wrap;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+    .footer-brand-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem}
+    .footer-desc{font-size:0.85rem;color:var(--text3);line-height:1.6;max-width:280px}
+    .footer-links-col h4{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text2);margin-bottom:0.875rem}
+    .footer-links-col a{display:block;color:var(--text3);text-decoration:none;font-size:0.85rem;margin-bottom:0.5rem;transition:color 0.2s}
+    .footer-links-col a:hover{color:var(--cyan)}
+    .footer-bottom{max-width:1100px;margin:1.5rem auto 0;display:flex;justify-content:space-between;font-size:0.8rem;color:var(--text3);flex-wrap:wrap;gap:0.75rem}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}.d5{transition-delay:.35s}.d6{transition-delay:.42s}
+    @media(max-width:1024px){.stat-strip{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}}
+    @media(max-width:768px){.nav-links{display:none}.values-grid{grid-template-columns:1fr}.mission{padding:2.5rem 1.5rem}}
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <nav id="topNav">
+    <a class="nav-brand" href="index.html"><div class="nav-logo">TN</div><span class="nav-name">ToolNest Studio</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#categories">Tools</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy-policy.html">Privacy</a></li>
+      <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="page-hero">
+      <div class="reveal">
+        <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>About</span></div>
+        <div class="hero-badge"><span></span> About ToolNest Studio</div>
+        <h1>Built to make <span class="gradient-text">every workflow</span> faster.</h1>
+        <p class="hero-lead">ToolNest Studio is a free, browser-powered platform combining AI writing tools, document utilities, finance calculators, and creator tools — all in one beautiful, fast workspace.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="stat-strip">
+        <div class="stat-card reveal d1"><strong>13+</strong><span>Free Tools</span></div>
+        <div class="stat-card reveal d2"><strong>100%</strong><span>Browser-Powered</span></div>
+        <div class="stat-card reveal d3"><strong>0</strong><span>Server Uploads</span></div>
+        <div class="stat-card reveal d4"><strong>Free</strong><span>Always &amp; Forever</span></div>
+      </div>
+      <div class="mission reveal">
+        <h2>Our <span class="gradient-text">Mission</span></h2>
+        <p>We believe productivity tools should be fast, private, and genuinely free. ToolNest Studio removes the friction of switching between a dozen apps — everything you need for writing, formatting, documents, and finances lives in one polished workspace that respects your time and your data.</p>
+      </div>
+      <div class="section">
+        <div class="split">
+          <div class="reveal">
+            <div class="section-eyebrow">What We Built</div>
+            <div class="section-title">A workspace for <span class="gradient-text">real work.</span></div>
+            <p class="section-desc">From AI-powered writing assistants to resume builders, invoice calculators to PDF mergers — ToolNest covers everyday tasks that creators, students, and freelancers face.</p>
+          </div>
+          <div class="feat-2col reveal">
+            <div class="feature-card"><div class="fc-icon">🤖</div><h3>AI Tools</h3><p>Writing analysis and humanization powered by pattern recognition.</p></div>
+            <div class="feature-card fc-violet"><div class="fc-icon">📄</div><h3>Documents</h3><p>PDF merge, extract, and image conversion.</p></div>
+            <div class="feature-card fc-emerald"><div class="fc-icon">💰</div><h3>Finance</h3><p>Budget planning and freelance invoice generation.</p></div>
+            <div class="feature-card fc-pink"><div class="fc-icon">✍️</div><h3>Writing</h3><p>Text formatting, reading time, and content cleanup.</p></div>
+            <div class="feature-card fc-amber"><div class="fc-icon">🎨</div><h3>Creator</h3><p>Resume builder and bio link page generator.</p></div>
+            <div class="feature-card"><div class="fc-icon">🔧</div><h3>Utilities</h3><p>Password generator, unit converter, card validator.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="section">
+        <div class="reveal" style="margin-bottom:2.5rem">
+          <div class="section-eyebrow">Why We're Different</div>
+          <div class="section-title">Privacy <span class="gradient-text">by design.</span></div>
+        </div>
+        <div class="values-grid">
+          <div class="value-card reveal d1"><div class="v-icon">🏠</div><div><h4>Local Processing</h4><p>PDF merging, image conversion, and all text tools process your data entirely in your browser. Nothing sent to servers.</p></div></div>
+          <div class="value-card reveal d2"><div class="v-icon">⚡</div><div><h4>Instant Results</h4><p>No loading spinners, no API delays. Computed in milliseconds right on your device.</p></div></div>
+          <div class="value-card reveal d3"><div class="v-icon">🆓</div><div><h4>Always Free</h4><p>No accounts required, no paywalls. All 13+ tools are completely free without registration.</p></div></div>
+          <div class="value-card reveal d4"><div class="v-icon">🔄</div><div><h4>Constantly Growing</h4><p>AI tools, SEO utilities, dev tools, and more are on the roadmap. New tools ship regularly.</p></div></div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="section">
+        <div class="split">
+          <div class="reveal">
+            <div class="section-eyebrow">Roadmap</div>
+            <div class="section-title">What's <span class="gradient-text">coming next.</span></div>
+            <p class="section-desc">ToolNest is actively expanding. Here's a glimpse at what we're building toward.</p>
+          </div>
+          <div class="timeline reveal">
+            <div class="tl-item"><div class="tl-dot">✅</div><div class="tl-content"><div class="tl-year">Launched · 2025</div><h4>Core 13-Tool Suite</h4><p>Resume builder, AI assistant, PDF tools, budget calculator, bio link generator, and more.</p></div></div>
+            <div class="tl-item"><div class="tl-dot">🔄</div><div class="tl-content"><div class="tl-year">In Progress</div><h4>AI Enhancements</h4><p>Deeper AI-powered text suggestions, summarization, and tone detection tools.</p></div></div>
+            <div class="tl-item"><div class="tl-dot">🗺️</div><div class="tl-content"><div class="tl-year">Coming Soon</div><h4>SEO &amp; Dev Tools</h4><p>Meta tag generator, JSON formatter, Regex tester, color palette extractor.</p></div></div>
+            <div class="tl-item"><div class="tl-dot">💡</div><div class="tl-content"><div class="tl-year">Future</div><h4>Workspace Profiles</h4><p>Optional saved profiles to persist preferences and draft history across sessions.</p></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="cta-strip reveal">
+        <h3>Ready for the <span class="gradient-text">full workspace?</span></h3>
+        <p>All 13+ tools are live, free, and waiting. No account needed — start immediately.</p>
+        <div class="btn-group">
+          <a class="btn btn-primary" href="index.html#workspace">⚡ Open Workspace</a>
+          <a class="btn btn-ghost" href="contact.html">Contact Us ✉️</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-row"><div class="nav-logo">TN</div><strong style="font-size:1.1rem">ToolNest Studio</strong></div>
+        <p class="footer-desc">An all-in-one tool platform for writing, AI-assisted editing, documents, finances, and creator workflows.</p>
+      </div>
+      <div class="footer-links-col">
+        <h4>Tools</h4>
+        <a href="index.html#resume-builder">Resume Builder</a>
+        <a href="index.html#ai-writing-assistant">AI Writing Assistant</a>
+        <a href="index.html#pdf-tools">PDF Tools</a>
+        <a href="index.html#budget-calculator">Budget Calculator</a>
+      </div>
+      <div class="footer-links-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 ToolNest Studio. All rights reserved.</span>
+      <span>Built with ❤️ — 100% Browser-Powered</span>
+    </div>
+  </footer>
+  <script>
+    const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}}),{threshold:0.07});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+    window.addEventListener('scroll',()=>{document.getElementById('topNav').style.background=window.scrollY>50?'rgba(3,7,18,0.92)':'rgba(3,7,18,0.7)'});
+  </script>
+</body>
+</html>
