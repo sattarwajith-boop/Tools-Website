@@ -23,6 +23,21 @@
     }
   });
 
+  // Safer public-facing wording for fictional payment-card test data.
+  if(location.pathname.indexOf('/tools/credit-card-generator.html')>-1){
+    document.title='Payment Card Test Data Generator | ToolNest Studio';
+    var desc=document.querySelector('meta[name="description"]');
+    if(desc) desc.setAttribute('content','Generate fictional Luhn-valid payment card test numbers for software development and UI testing only.');
+    document.querySelectorAll('h1 span.gt,.bc span,.tt').forEach(function(el){
+      if(el.textContent.trim()==='Credit Card Generator') el.textContent='Payment Card Test Data Generator';
+    });
+    document.querySelectorAll('p').forEach(function(p){
+      p.innerHTML=p.innerHTML
+        .replace(/Generate test card numbers that pass Luhn validation for Visa, Mastercard, Amex, and Discover\. For UI and software testing only — not real cards\./g,'Generate fictional payment card test numbers that pass Luhn validation for Visa, Mastercard, Amex, and Discover. For UI and software testing only — not real payment cards.')
+        .replace(/All numbers generated here are <strong>fictional test data only<\/strong>\. They pass Luhn checksum validation but are NOT real credit cards, cannot be used for purchases, and have no financial value\. For software development and UI testing only\./g,'All numbers generated here are <strong>fictional test data only</strong>. They pass Luhn checksum validation but are NOT real payment cards, cannot be used for purchases, and have no financial value. For software development and UI testing only.');
+    });
+  }
+
   // cursor
   if(window.matchMedia('(pointer:fine)').matches){
     const d=document.getElementById('cd'),r=document.getElementById('cr');
