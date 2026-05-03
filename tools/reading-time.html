@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Reading Time | ToolNest Studio</title><meta name="description" content="Estimate reading and speaking time plus word and character counts."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/><link rel="stylesheet" href="../shared.css"/>
+</head>
+<body>
+<div class="cd" id="cd"></div><div class="cr" id="cr"></div>
+<div class="gbg"></div><div class="orb o1"></div><div class="orb o2"></div>
+<nav id="tnav"><a class="nb" href="../index.html"><div class="nl">TN</div><span class="nn">ToolNest Studio</span></a><ul class="nls"><li><a href="../index.html">Home</a></li><li><a href="../index.html#tools">All Tools</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../contact.html" class="nc">Contact</a></li></ul></nav><main><div class="th2 rv"><div class="bc"><a href="../index.html">Home</a><span>/</span><a href="../index.html#tools">Tools</a><span>/</span><span>Reading Time Estimator</span></div><div class="tbg" style="color:var(--cy);background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.28)">⏱️ Writing</div><h1>⏱️ <span class="gt">Reading Time Estimator</span></h1><p>Paste any content to instantly get reading time, speaking time, word count, character count, sentence count, and paragraph count.</p></div>
+<div class="con" style="padding-bottom:5rem">
+  <div class="tc rv" style="max-width:720px;margin:0 auto">
+    <div class="th"><div class="tt"><div class="td2"></div>Reading Time Calculator</div></div>
+    <div class="tb fgg">
+      <div class="fg"><label class="fl">Paste Your Content</label><textarea class="ft" id="rt-in" rows="12" placeholder="Paste your article, essay, blog post, or script here…">Paste your content here to estimate how long it takes to read or speak aloud. This tool counts words, characters, sentences, and paragraphs, then calculates realistic time estimates based on average reading and speaking speeds. It is useful for writers, speakers, teachers, and content creators who need to know the length of their work before publishing or presenting.</textarea></div>
+      <div class="fr">
+        <div class="fg"><label class="fl">Reading Speed (WPM)</label><input class="fi" type="number" id="rt-rwpm" value="238" min="50" max="800"/></div>
+        <div class="fg"><label class="fl">Speaking Speed (WPM)</label><input class="fi" type="number" id="rt-swpm" value="130" min="50" max="500"/></div>
+      </div>
+      <div class="mc" id="rt-stats"></div>
+      <div class="rb" id="rt-result">Enter content above to see time estimates.</div>
+    </div>
+  </div>
+</div></main><footer class="sf"><div class="fg2"><div class="fb"><div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem"><div class="nl">TN</div><strong style="font-size:.98rem;font-weight:800">ToolNest Studio</strong></div><p style="font-size:.8rem;color:var(--t3);line-height:1.6;max-width:255px">22+ free AI browser tools.</p></div><div class="fc"><h4>Tools</h4><a href="../tools/grammar-checker.html">Grammar Checker</a><a href="../tools/ai-detector.html">AI Detector</a><a href="../tools/lesson-generator.html">Lesson Generator</a></div><div class="fc"><h4>Company</h4><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../privacy-policy.html">Privacy</a></div></div><div class="fbot"><span>© 2025 ToolNest Studio.</span><span>100% Browser-Powered</span></div></footer>
+<script src="../shared.js"></script><script>
+function calcRT(){
+  const text=document.getElementById('rt-in').value;
+  const rWpm=parseInt(document.getElementById('rt-rwpm').value)||238;
+  const sWpm=parseInt(document.getElementById('rt-swpm').value)||130;
+  const words=text.trim()?text.trim().split(/\s+/).filter(Boolean).length:0;
+  const chars=text.length;
+  const sents=text.trim()?text.trim().split(/[.!?]+/).filter(Boolean).length:0;
+  const paras=text.trim()?text.trim().split(/
+\s*
+/).filter(Boolean).length:0;
+  const fmt=m=>m<1?'< 1 min':m<60?`${Math.ceil(m)} min`:`${Math.floor(m/60)}h ${Math.ceil(m%60)}m`;
+  document.getElementById('rt-stats').innerHTML=`<div class="mch"><strong>${words.toLocaleString()}</strong> words</div><div class="mch"><strong>${chars.toLocaleString()}</strong> chars</div><div class="mch"><strong>${sents}</strong> sentences</div><div class="mch"><strong>${paras}</strong> paragraphs</div>`;
+  document.getElementById('rt-result').innerHTML=words?`📖 <strong>Reading:</strong> ~${fmt(words/rWpm)} at ${rWpm} WPM &nbsp;&nbsp; 🎤 <strong>Speaking:</strong> ~${fmt(words/sWpm)} at ${sWpm} WPM`:'Enter content to see time estimates.';
+}
+['rt-in','rt-rwpm','rt-swpm'].forEach(id=>document.getElementById(id).addEventListener('input',calcRT));
+calcRT();
+</script>
+</body></html>
