@@ -7,12 +7,13 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 - QR Code Generator upgraded with Text/URL mode, vCard mode, PNG export, SVG export, copy image, local processing note, and keyboard shortcuts.
 - JSON Formatter & Validator added with format, validate, minify, copy, download, error location hints, and local processing.
 - Word Counter Pro added with word count, reading time, keyword density, readability, sentence complexity, passive voice estimate, copy report, and TXT export.
+- Markdown Editor added with live preview, Markdown/HTML copy, Markdown/HTML downloads, local processing note, and keyboard shortcuts.
 - Global dark/light mode toggle added and saved to `localStorage`.
 - Tool favorites added and saved to `localStorage`.
 - Recently used tools added and saved to `localStorage`.
 - Share button added to tool pages.
 - Simple thumbs up/down tool rating added locally.
-- Offline badges added for newly injected homepage cards and tool-page labels.
+- Browser/local-processing badges added for newly supported homepage cards and tool-page labels.
 - Keyboard shortcuts added: `Ctrl/Cmd+Enter` to run primary action and `Escape` to clear on supported tools.
 
 ## Existing Tool Improvements
@@ -64,7 +65,7 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 ### Tier 1 — High Impact, Fast to Build
 - ✅ QR Code Generator
 - ✅ Word Counter Pro
-- Markdown Editor
+- ✅ Markdown Editor
 - Color Palette Generator
 - Pomodoro Timer
 - Countdown Timer / Clock
@@ -116,7 +117,7 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 - ✅ Keyboard shortcuts such as `Ctrl+Enter` to run and `Escape` to clear.
 - ✅ Simple per-tool feedback such as thumbs up/down.
 - Progress bars for long operations.
-- ✅ Offline badge for tools that work fully in the browser.
+- ✅ Browser/local-processing badge for tools that work in the browser.
 - ✅ Share button for direct tool links.
 
 ## Top 5 Highest-Impact New Tools to Build First
