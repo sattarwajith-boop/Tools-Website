@@ -11,6 +11,7 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 - Color Palette Generator added with palette moods, base color, color locking, HEX/RGB copy, CSS variable export, CSS download, and local processing.
 - Pomodoro Timer added with focus/short/long sessions, custom durations, sound alerts, auto-start option, local stats, session log, and keyboard shortcuts.
 - Countdown Timer & Clock added with live clock, custom target date/time, presets, progress bar, sound alert, copied summary, local saving, and keyboard shortcuts.
+- Random Name Generator added with multiple name types, styles, quantity controls, formatting options, optional keyword, favorites, copy, TXT export, and local processing.
 - Global dark/light mode toggle added and saved to `localStorage`.
 - Tool favorites added and saved to `localStorage`.
 - Recently used tools added and saved to `localStorage`.
@@ -72,7 +73,7 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 - ✅ Color Palette Generator
 - ✅ Pomodoro Timer
 - ✅ Countdown Timer / Clock
-- Random Name Generator
+- ✅ Random Name Generator
 - Tip Calculator
 
 ### Tier 2 — Developer & Tech Tools
