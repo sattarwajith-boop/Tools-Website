@@ -2,6 +2,18 @@
 
 ToolNest Studio should continue to prioritize fast, browser-powered tools first. API-powered AI tools can be added later when they clearly improve the user experience and can be shipped safely without exposing keys.
 
+## Implemented in Latest Batch
+
+- QR Code Generator upgraded with Text/URL mode, vCard mode, PNG export, SVG export, copy image, local processing note, and keyboard shortcuts.
+- JSON Formatter & Validator added with format, validate, minify, copy, download, error location hints, and local processing.
+- Global dark/light mode toggle added and saved to `localStorage`.
+- Tool favorites added and saved to `localStorage`.
+- Recently used tools added and saved to `localStorage`.
+- Share button added to tool pages.
+- Simple thumbs up/down tool rating added locally.
+- Offline badges added for newly injected homepage cards and tool-page labels.
+- Keyboard shortcuts added: `Ctrl/Cmd+Enter` to run primary action and `Escape` to clear on supported tools.
+
 ## Existing Tool Improvements
 
 ### Grammar Checker
@@ -49,7 +61,7 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 ## New Tool Ideas
 
 ### Tier 1 — High Impact, Fast to Build
-- QR Code Generator
+- ✅ QR Code Generator
 - Word Counter Pro
 - Markdown Editor
 - Color Palette Generator
@@ -59,7 +71,7 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 - Tip Calculator
 
 ### Tier 2 — Developer & Tech Tools
-- JSON Formatter & Validator
+- ✅ JSON Formatter & Validator
 - Base64 Encoder / Decoder
 - URL Encoder / Decoder
 - Hash Generator
@@ -97,19 +109,19 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 
 ## Design & UX Improvements
 
-- Dark/light mode toggle saved to `localStorage`.
-- Tool favorites with a “My Favorites” quick-access bar.
-- Recently used tools section.
-- Keyboard shortcuts such as `Ctrl+Enter` to run and `Escape` to clear.
-- Simple per-tool feedback such as thumbs up/down.
+- ✅ Dark/light mode toggle saved to `localStorage`.
+- ✅ Tool favorites with a “My Favorites” quick-access bar.
+- ✅ Recently used tools section.
+- ✅ Keyboard shortcuts such as `Ctrl+Enter` to run and `Escape` to clear.
+- ✅ Simple per-tool feedback such as thumbs up/down.
 - Progress bars for long operations.
-- Offline badge for tools that work fully in the browser.
-- Share button for direct tool links.
+- ✅ Offline badge for tools that work fully in the browser.
+- ✅ Share button for direct tool links.
 
 ## Top 5 Highest-Impact New Tools to Build First
 
-1. QR Code Generator — high demand and simple to build locally.
-2. JSON Formatter & Validator — useful for developers every day.
+1. ✅ QR Code Generator — high demand and simple to build locally.
+2. ✅ JSON Formatter & Validator — useful for developers every day.
 3. Cover Letter Generator — high user value, but should be API-safe.
 4. Color Palette Generator — visual, shareable, and designer-friendly.
 5. Word Counter Pro — upgrades the existing reading-time workflow with deeper analysis.
