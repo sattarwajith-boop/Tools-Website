@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Resume Builder | ToolNest Studio</title><meta name="description" content="Create polished resumes with live preview and download as HTML."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/><link rel="stylesheet" href="../shared.css"/>
+
+<link rel="canonical" href="https://sattarwajith-boop.github.io/Tools-Website/tools/resume-builder.html"/>
+<link rel="icon" type="image/svg+xml" href="/Tools-Website/favicon.svg"/>
+<link rel="shortcut icon" href="/Tools-Website/favicon.svg"/>
+<link rel="apple-touch-icon" href="/Tools-Website/favicon.svg"/>
+<link rel="manifest" href="/Tools-Website/site.webmanifest"/>
+<meta name="theme-color" content="#06b6d4"/>
+<meta name="application-name" content="ToolNest Studio"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="ToolNest Studio"/>
+<meta property="og:title" content="Resume Builder | ToolNest Studio"/>
+<meta property="og:description" content="Create polished resumes with live preview and download as HTML."/>
+<meta property="og:url" content="https://sattarwajith-boop.github.io/Tools-Website/tools/resume-builder.html"/>
+<meta property="og:image" content="https://sattarwajith-boop.github.io/Tools-Website/og-image.svg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Resume Builder | ToolNest Studio"/>
+<meta name="twitter:description" content="Create polished resumes with live preview and download as HTML."/>
+<meta name="twitter:image" content="https://sattarwajith-boop.github.io/Tools-Website/og-image.svg"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Resume Builder","url":"https://sattarwajith-boop.github.io/Tools-Website/tools/resume-builder.html","description":"Create polished resumes with live preview and download as HTML.","publisher":{"@type":"Organization","name":"ToolNest Studio","logo":{"@type":"ImageObject","url":"https://sattarwajith-boop.github.io/Tools-Website/logo.svg"}},"applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body>
+<div class="cd" id="cd"></div><div class="cr" id="cr"></div>
+<div class="gbg"></div><div class="orb o1"></div><div class="orb o2"></div>
+<nav id="tnav"><a class="nb" href="../index.html"><div class="nl">TN</div><span class="nn">ToolNest Studio</span></a><ul class="nls"><li><a href="../index.html">Home</a></li><li><a href="../index.html#tools">All Tools</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../contact.html" class="nc">Contact</a></li></ul></nav><main><div class="th2 rv"><div class="bc"><a href="../index.html">Home</a><span>/</span><a href="../index.html#tools">Tools</a><span>/</span><span>Resume Builder</span></div><div class="tbg" style="color:var(--cy);background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.28)">📋 Documents</div><h1>📋 <span class="gt">Resume Builder</span></h1><p>Build a professional single-page resume with live preview. Fill in your details, see changes instantly, then download as HTML or print to PDF.</p></div>
+<div class="con" style="padding-bottom:5rem">
+  <div class="tc rv">
+    <div class="th"><div class="tt"><div class="td2"></div>Resume Builder</div>
+      <div class="ta"><button class="bsm bgsm" id="rb-save">Save Draft</button><button class="bsm bgsm" id="rb-dl">Download HTML</button><button class="bsm bpsm" id="rb-print">Print / PDF</button></div>
+    </div>
+    <div class="tb">
+      <div class="sp">
+        <div class="fgg" id="rb-form">
+          <div class="fr"><div class="fg"><label class="fl">Full Name</label><input class="fi" name="name" value="Avery Morgan"/></div><div class="fg"><label class="fl">Professional Title</label><input class="fi" name="title" value="Product Designer &amp; Developer"/></div></div>
+          <div class="fr"><div class="fg"><label class="fl">Email</label><input class="fi" name="email" value="avery@example.com"/></div><div class="fg"><label class="fl">Phone</label><input class="fi" name="phone" value="+1 (555) 208-1142"/></div></div>
+          <div class="fr"><div class="fg"><label class="fl">Website</label><input class="fi" name="website" value="avery.design"/></div><div class="fg"><label class="fl">Location</label><input class="fi" name="location" value="Colombo, Sri Lanka"/></div></div>
+          <div class="fg"><label class="fl">Summary</label><textarea class="ft" name="summary" rows="3">I design thoughtful digital products and ship interfaces that balance clarity, polish, and conversion.</textarea></div>
+          <div class="fg"><label class="fl">Skills (comma-separated)</label><textarea class="ft" name="skills" rows="2">UI design, React, Figma, Design systems, User research</textarea></div>
+          <div class="fg"><label class="fl">Experience — one per line: Role | Company | Dates | Achievement</label><textarea class="ft" name="experience" rows="5">Senior Product Designer | Northstar Labs | 2023–Now | Led design for a B2B dashboard, increasing activation by 22%
+Product Designer | Hush Studio | 2020–2023 | Built scalable component systems for startup clients</textarea></div>
+          <div class="fg"><label class="fl">Education — one per line: Degree | Institution | Year</label><textarea class="ft" name="education" rows="2">B.Sc. Computer Science | University of Colombo | 2018</textarea></div>
+        </div>
+        <div style="background:rgba(255,255,255,.02);border:1px solid var(--b);border-radius:var(--r-lg);padding:1.5rem;min-height:320px" id="rb-preview"></div>
+      </div>
+    </div>
+  </div>
+</div></main><footer class="sf"><div class="fg2"><div class="fb"><div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem"><div class="nl">TN</div><strong style="font-size:.98rem;font-weight:800">ToolNest Studio</strong></div><p style="font-size:.8rem;color:var(--t3);line-height:1.6;max-width:255px">22+ free AI browser tools.</p></div><div class="fc"><h4>Tools</h4><a href="../tools/grammar-checker.html">Grammar Checker</a><a href="../tools/ai-detector.html">AI Detector</a><a href="../tools/lesson-generator.html">Lesson Generator</a></div><div class="fc"><h4>Company</h4><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../privacy-policy.html">Privacy</a></div></div><div class="fbot"><span>© 2025 ToolNest Studio.</span><span>100% Browser-Powered</span></div></footer>
+<script src="../shared.js"></script><script>
+function esc(v){return String(v||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function render(){var f=document.getElementById('rb-form');var g=function(n){var el=f.querySelector('[name="'+n+'"]');return el?el.value:'';};var skills=g('skills').split(',').map(function(s){return s.trim();}).filter(Boolean);var exp=g('experience').split('\n').filter(Boolean).map(function(l){var p=l.split('|').map(function(x){return x.trim();});return{r:p[0]||'',co:p[1]||'',d:p[2]||'',a:p[3]||''};});var edu=g('education').split('\n').filter(Boolean).map(function(l){var p=l.split('|').map(function(x){return x.trim();});return{deg:p[0]||'',inst:p[1]||'',yr:p[2]||''};});var html='<h2 style="font-size:1.45rem;font-weight:800;margin-bottom:.2rem">'+esc(g('name'))+'</h2><div style="font-size:.875rem;color:var(--t2);margin-bottom:.875rem">'+esc(g('title'))+'</div><div style="display:flex;gap:.65rem;flex-wrap:wrap;font-size:.72rem;color:var(--t2);margin-bottom:1.1rem">'+[g('email'),g('phone'),g('website'),g('location')].filter(Boolean).map(function(v){return '<span>'+esc(v)+'</span>';}).join('')+'</div>';if(g('summary'))html+='<div style="margin-bottom:1rem"><div style="font-size:.62rem;font-weight:700;text-transform:uppercase;color:var(--cy);border-bottom:1px solid var(--b);padding-bottom:.3rem;margin-bottom:.6rem">Summary</div><p style="font-size:.8rem;color:var(--t2);line-height:1.65">'+esc(g('summary'))+'</p></div>';if(exp.length)html+='<div style="margin-bottom:1rem"><div style="font-size:.62rem;font-weight:700;text-transform:uppercase;color:var(--cy);border-bottom:1px solid var(--b);padding-bottom:.3rem;margin-bottom:.6rem">Experience</div>'+exp.map(function(e){return '<div style="margin-bottom:.65rem"><strong style="font-size:.8rem">'+esc(e.r)+'</strong> <span style="font-size:.76rem;color:var(--t2)">- '+esc(e.co)+(e.d?' . '+esc(e.d):'')+'</span>'+(e.a?'<br><span style="font-size:.76rem;color:var(--t2)">'+esc(e.a)+'</span>':'')+'</div>';}).join('')+'</div>';if(edu.length)html+='<div style="margin-bottom:1rem"><div style="font-size:.62rem;font-weight:700;text-transform:uppercase;color:var(--cy);border-bottom:1px solid var(--b);padding-bottom:.3rem;margin-bottom:.6rem">Education</div>'+edu.map(function(e){return '<div style="margin-bottom:.5rem;font-size:.8rem"><strong>'+esc(e.deg)+'</strong>'+(e.inst?' - <span style="color:var(--t2)">'+esc(e.inst)+'</span>':'')+(e.yr?' . <span style="color:var(--t3)">'+esc(e.yr)+'</span>':'')+'</div>';}).join('')+'</div>';if(skills.length)html+='<div><div style="font-size:.62rem;font-weight:700;text-transform:uppercase;color:var(--cy);border-bottom:1px solid var(--b);padding-bottom:.3rem;margin-bottom:.6rem">Skills</div><div style="display:flex;flex-wrap:wrap;gap:.35rem">'+skills.map(function(s){return '<span style="padding:.18rem .55rem;background:rgba(6,182,212,.1);border-radius:5px;font-size:.7rem;color:var(--cy)">'+esc(s)+'</span>';}).join('')+'</div></div>';document.getElementById('rb-preview').innerHTML=html;}
+document.getElementById('rb-form').addEventListener('input',render);try{var saved=JSON.parse(localStorage.getItem('tn-resume-v3')||'null');if(saved){document.querySelectorAll('#rb-form [name]').forEach(function(el){if(saved[el.name]!==undefined)el.value=saved[el.name];});}}catch(e){}render();document.getElementById('rb-save').onclick=function(){var d={};document.querySelectorAll('#rb-form [name]').forEach(function(el){d[el.name]=el.value;});localStorage.setItem('tn-resume-v3',JSON.stringify(d));this.textContent='Saved';var b=this;setTimeout(function(){b.textContent='Save Draft';},1400);};document.getElementById('rb-dl').onclick=function(){var html='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Resume</title><style>body{font-family:Arial,sans-serif;max-width:780px;margin:40px auto;padding:0 24px;color:#111;line-height:1.6}</style></head><body>'+document.getElementById('rb-preview').innerHTML+'</body></html>';var a=document.createElement('a');a.href='data:text/html,'+encodeURIComponent(html);a.download='resume.html';a.click();};document.getElementById('rb-print').onclick=function(){var w=window.open('','_blank');w.document.write('<!DOCTYPE html><html><head><title>Resume</title><style>body{font-family:Arial,sans-serif;padding:40px;color:#111;line-height:1.6;max-width:780px;margin:0 auto}</style></head><body>'+document.getElementById('rb-preview').innerHTML+'</body></html>');w.document.close();w.focus();w.print();};
+</script>
+</body></html>

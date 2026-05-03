@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Credit Card Generator | ToolNest Studio</title><meta name="description" content="Generate Luhn-valid test card numbers for UI testing — for development only."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/><link rel="stylesheet" href="../shared.css"/>
+
+
+<link rel="canonical" href="https://sattarwajith-boop.github.io/Tools-Website/tools/credit-card-generator.html"/>
+<link rel="icon" type="image/svg+xml" href="/Tools-Website/favicon.svg"/>
+<link rel="shortcut icon" href="/Tools-Website/favicon.svg"/>
+<link rel="apple-touch-icon" href="/Tools-Website/favicon.svg"/>
+<link rel="manifest" href="/Tools-Website/site.webmanifest"/>
+<meta name="theme-color" content="#06b6d4"/>
+<meta name="application-name" content="ToolNest Studio"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="ToolNest Studio"/>
+<meta property="og:title" content="Credit Card Generator | ToolNest Studio"/>
+<meta property="og:description" content="Generate Luhn-valid test card numbers for UI testing — for development only."/>
+<meta property="og:url" content="https://sattarwajith-boop.github.io/Tools-Website/tools/credit-card-generator.html"/>
+<meta property="og:image" content="https://sattarwajith-boop.github.io/Tools-Website/og-image.svg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Credit Card Generator | ToolNest Studio"/>
+<meta name="twitter:description" content="Generate Luhn-valid test card numbers for UI testing — for development only."/>
+<meta name="twitter:image" content="https://sattarwajith-boop.github.io/Tools-Website/og-image.svg"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Credit Card Generator","url":"https://sattarwajith-boop.github.io/Tools-Website/tools/credit-card-generator.html","description":"Generate Luhn-valid test card numbers for UI testing — for development only.","publisher":{"@type":"Organization","name":"ToolNest Studio","logo":{"@type":"ImageObject","url":"https://sattarwajith-boop.github.io/Tools-Website/logo.svg"}},"applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body>
+<div class="cd" id="cd"></div><div class="cr" id="cr"></div>
+<div class="gbg"></div><div class="orb o1"></div><div class="orb o2"></div>
+<nav id="tnav"><a class="nb" href="../index.html"><div class="nl">TN</div><span class="nn">ToolNest Studio</span></a><ul class="nls"><li><a href="../index.html">Home</a></li><li><a href="../index.html#tools">All Tools</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../contact.html" class="nc">Contact</a></li></ul></nav><main><div class="th2 rv"><div class="bc"><a href="../index.html">Home</a><span>/</span><a href="../index.html#tools">Tools</a><span>/</span><span>Credit Card Generator</span></div><div class="tbg" style="color:var(--cy);background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.28)">💳 Utilities</div><h1>💳 <span class="gt">Credit Card Generator</span></h1><p>Generate test card numbers that pass Luhn validation for Visa, Mastercard, Amex, and Discover. For UI and software testing only — not real cards.</p></div>
+<div class="con" style="padding-bottom:5rem">
+<div class="rv" style="background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.28);border-radius:var(--r-lg);padding:1.1rem 1.25rem;margin-bottom:1.5rem">
+  <p style="font-size:.83rem;color:var(--am);line-height:1.65">⚠️ <strong>Disclaimer:</strong> All numbers generated here are <strong>fictional test data only</strong>. They pass Luhn checksum validation but are NOT real credit cards, cannot be used for purchases, and have no financial value. For software development and UI testing only.</p>
+</div>
+<div style="display:grid;grid-template-columns:300px 1fr;gap:1.4rem;align-items:start">
+  <div class="tc">
+    <div class="th"><div class="tt"><div class="td2"></div>Options</div></div>
+    <div class="tb fgg">
+      <div>
+        <label class="fl" style="margin-bottom:.55rem">Card Network</label>
+        <div style="display:flex;flex-wrap:wrap;gap:.45rem" id="cc-nets">
+          <button class="bsm bpsm cc-net" data-n="visa">Visa</button>
+          <button class="bsm bgsm cc-net" data-n="mastercard">Mastercard</button>
+          <button class="bsm bgsm cc-net" data-n="amex">Amex</button>
+          <button class="bsm bgsm cc-net" data-n="discover">Discover</button>
+          <button class="bsm bgsm cc-net" data-n="random">Random Mix</button>
+        </div>
+      </div>
+      <div class="fg"><label class="fl">Quantity</label><select class="fs" id="cc-qty"><option value="1">1 card</option><option value="5" selected>5 cards</option><option value="10">10 cards</option><option value="20">20 cards</option></select></div>
+      <div class="fg"><label class="fl">Expiry</label><select class="fs" id="cc-exp"><option value="future">Random future (1–5 years)</option><option value="fixed">Fixed: 12/29</option></select></div>
+      <div class="fg"><label class="fl">Include CVV</label><select class="fs" id="cc-cvv"><option value="yes" selected>Yes</option><option value="no">No</option></select></div>
+      <div class="fg"><label class="fl">Include Name</label><select class="fs" id="cc-name"><option value="yes" selected>Yes</option><option value="no">No</option></select></div>
+      <button class="bsm bpsm" id="cc-gen" style="width:100%;padding:.65rem">Generate ⚡</button>
+      <button class="bsm bgsm" id="cc-copy-all" style="width:100%">Copy All Numbers</button>
+    </div>
+  </div>
+  <div>
+    <div class="tc" style="margin-bottom:1.4rem">
+      <div class="th"><div class="tt"><div class="td2" style="background:var(--am)"></div>Card Preview</div></div>
+      <div class="tb" style="text-align:center">
+        <div id="cc-preview" style="width:100%;max-width:360px;margin:0 auto;background:linear-gradient(135deg,#1e293b,#0f172a);border-radius:18px;padding:1.75rem 2rem;border:1px solid rgba(255,255,255,.12)">
+          <div style="width:36px;height:26px;background:linear-gradient(135deg,#d4af37,#b8860b);border-radius:5px;margin-bottom:1.25rem;border:1px solid rgba(255,255,255,.2)"></div>
+          <div id="cc-pnum" style="font-family:'JetBrains Mono',monospace;font-size:1.15rem;letter-spacing:.2em;color:#fff;margin-bottom:1.1rem">•••• •••• •••• ••••</div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end">
+            <div><div style="font-size:.55rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.5);margin-bottom:.25rem">Card Holder</div><div id="cc-pname" style="font-family:'JetBrains Mono',monospace;font-size:.82rem;color:#fff;font-weight:600">TEST USER</div></div>
+            <div><div style="font-size:.55rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.5);margin-bottom:.25rem">Expires</div><div id="cc-pexp" style="font-family:'JetBrains Mono',monospace;font-size:.82rem;color:#fff;font-weight:600">MM/YY</div></div>
+            <div id="cc-pbrand" style="font-size:1.25rem;font-weight:900;color:#fff">VISA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tc">
+      <div class="th"><div class="tt"><div class="td2" style="background:var(--cy)"></div>Generated Cards</div><div class="mc" id="cc-meta"></div></div>
+      <div class="tb"><div id="cc-list" style="color:var(--t3);font-size:.875rem;padding:.5rem">Click Generate to create test cards.</div></div>
+    </div>
+  </div>
+</div>
+</div></main><footer class="sf"><div class="fg2"><div class="fb"><div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem"><div class="nl">TN</div><strong style="font-size:.98rem;font-weight:800">ToolNest Studio</strong></div><p style="font-size:.8rem;color:var(--t3);line-height:1.6;max-width:255px">22+ free AI browser tools.</p></div><div class="fc"><h4>Tools</h4><a href="../tools/grammar-checker.html">Grammar Checker</a><a href="../tools/ai-detector.html">AI Detector</a><a href="../tools/lesson-generator.html">Lesson Generator</a></div><div class="fc"><h4>Company</h4><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../privacy-policy.html">Privacy</a></div></div><div class="fbot"><span>© 2025 ToolNest Studio.</span><span>100% Browser-Powered</span></div></footer>
+<script src="../shared.js"></script><script>
+var NETS={visa:{prefix:['4'],len:16,name:'VISA',color:'#1a56db'},mastercard:{prefix:['51','52','53','54','55'],len:16,name:'MASTERCARD',color:'#e3002b'},amex:{prefix:['34','37'],len:15,name:'AMEX',color:'#007bc1'},discover:{prefix:['6011','65'],len:16,name:'DISCOVER',color:'#ff6600'}};
+var FIRST=['Alex','Sam','Jordan','Morgan','Taylor','Casey','Riley','Avery','Quinn','Drew'];var LAST=['Smith','Johnson','Williams','Brown','Davis','Miller','Wilson','Moore','Taylor','Anderson'];var activeNet='visa';var generatedCards=[];
+function rnd(a){return a[Math.floor(Math.random()*a.length)];}function luhnComplete(p){var arr=p.split('').map(Number);var s=0,a=false;for(var i=arr.length-1;i>=0;i--){var n=arr[i];if(a){n*=2;if(n>9)n-=9;}s+=n;a=!a;}return p+String((10-s%10)%10);}function genCard(net){var cfg=net==='random'?NETS[rnd(['visa','mastercard','amex','discover'])]:NETS[net];var pre=rnd(cfg.prefix);var partial=pre;while(partial.length<cfg.len-1)partial+=Math.floor(Math.random()*10);return{number:luhnComplete(partial),name:cfg.name,color:cfg.color,len:cfg.len};}function fmtNum(n,len){return len===15?n.replace(/(\d{4})(\d{6})(\d{5})/,'$1 $2 $3'):n.replace(/(\d{4})(\d{4})(\d{4})(\d{4})/,'$1 $2 $3 $4');}function genExp(type){if(type==='fixed')return '12/29';var now=new Date();var yr=String(now.getFullYear()+1+Math.floor(Math.random()*4)).slice(2);var mo=String(Math.ceil(Math.random()*12)).padStart(2,'0');return mo+'/'+yr;}function genCVV(name){var len=name==='AMEX'?4:3;return String(Math.floor(Math.random()*Math.pow(10,len))).padStart(len,'0');}
+document.querySelectorAll('.cc-net').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.cc-net').forEach(function(x){x.className='bsm bgsm cc-net';});b.className='bsm bpsm cc-net';activeNet=b.dataset.n;});});
+function renderList(showName,showCVV){document.getElementById('cc-list').innerHTML=generatedCards.map(function(c,i){return '<div style="background:rgba(255,255,255,.03);border:1px solid var(--b);border-radius:var(--r);padding:.875rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:.875rem;margin-bottom:.5rem;cursor:pointer" data-card-index="'+i+'"><div><div style="font-family:&quot;JetBrains Mono&quot;,monospace;font-size:.88rem;color:var(--cy)">'+c.fmt+'</div><div style="font-size:.72rem;color:var(--t3);margin-top:.18rem"><span style="color:'+c.color+'">'+c.brand+'</span>'+(showName?' . '+c.name:'')+' . Exp: '+c.exp+(showCVV?' . CVV: '+c.cvv:'')+'</div></div><button class="bsm bgsm" data-copy="'+c.fmt+'" style="flex-shrink:0;font-size:.72rem">Copy</button></div>';}).join('');document.querySelectorAll('[data-card-index]').forEach(function(row){row.onclick=function(){ccPreview(parseInt(row.dataset.cardIndex,10));};});document.querySelectorAll('[data-copy]').forEach(function(btn){btn.onclick=function(e){e.stopPropagation();navigator.clipboard.writeText(btn.dataset.copy);btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy';},1200);};});}
+document.getElementById('cc-gen').onclick=function(){var qty=parseInt(document.getElementById('cc-qty').value,10)||5;var expType=document.getElementById('cc-exp').value;var showCVV=document.getElementById('cc-cvv').value==='yes';var showName=document.getElementById('cc-name').value==='yes';generatedCards=[];for(var i=0;i<qty;i++){var card=genCard(activeNet);var exp=genExp(expType);var cvv=genCVV(card.name);var name=rnd(FIRST)+' '+rnd(LAST);generatedCards.push({fmt:fmtNum(card.number,card.len),raw:card.number,brand:card.name,color:card.color,exp:exp,cvv:cvv,name:name});}ccPreview(0);renderList(showName,showCVV);document.getElementById('cc-meta').innerHTML='<div class="mch"><strong>'+qty+'</strong> generated</div><div class="mch" style="color:var(--em)">Luhn valid</div>';};
+window.ccPreview=function(i){var c=generatedCards[i];if(!c)return;var showName=document.getElementById('cc-name').value==='yes';document.getElementById('cc-pnum').textContent=c.fmt;document.getElementById('cc-pname').textContent=showName?c.name.toUpperCase():'TEST USER';document.getElementById('cc-pexp').textContent=c.exp;document.getElementById('cc-pbrand').textContent=c.brand;document.getElementById('cc-preview').style.background='linear-gradient(135deg,'+c.color+'22,#0f172a)';};
+document.getElementById('cc-copy-all').onclick=function(){if(!generatedCards.length)return;navigator.clipboard.writeText(generatedCards.map(function(c){return c.fmt;}).join('\n'));this.textContent='Copied';var b=this;setTimeout(function(){b.textContent='Copy All Numbers';},1400);};
+</script>
+</body></html>

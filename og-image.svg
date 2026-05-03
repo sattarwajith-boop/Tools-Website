@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="r1" cx="20%" cy="20%" r="70%">
+      <stop stop-color="#06b6d4" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#030712" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="r2" cx="82%" cy="72%" r="65%">
+      <stop stop-color="#8b5cf6" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#030712" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="g" x1="72" y1="78" x2="178" y2="184" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06b6d4"/>
+      <stop offset=".55" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#030712"/>
+  <rect width="1200" height="630" fill="url(#r1)"/>
+  <rect width="1200" height="630" fill="url(#r2)"/>
+  <path d="M0 120h1200M0 240h1200M0 360h1200M0 480h1200M120 0v630M240 0v630M360 0v630M480 0v630M600 0v630M720 0v630M840 0v630M960 0v630M1080 0v630" stroke="#06b6d4" stroke-opacity=".08"/>
+  <rect x="74" y="78" width="104" height="104" rx="28" fill="url(#g)"/>
+  <path d="M96 111h60v15h-21v44h-17v-44H96v-15Z" fill="#fff"/>
+  <path d="M144 138h13v32h-13v-32Z" fill="#cffafe"/>
+  <text x="74" y="300" fill="#f8fafc" font-family="Outfit, Arial, sans-serif" font-size="82" font-weight="900">ToolNest Studio</text>
+  <text x="78" y="372" fill="#67e8f9" font-family="Outfit, Arial, sans-serif" font-size="42" font-weight="800">22 free browser-powered tools</text>
+  <text x="80" y="430" fill="#cbd5e1" font-family="Outfit, Arial, sans-serif" font-size="30" font-weight="600">AI writing, grammar, images, PDFs, lessons, finance, creator tools and more.</text>
+</svg>

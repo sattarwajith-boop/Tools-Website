@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AI Prompt Helper | ToolNest Studio</title>
+<meta name="description" content="Build powerful AI prompts for ChatGPT, Claude, Gemini and more."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../shared.css"/>
+
+
+<link rel="canonical" href="https://sattarwajith-boop.github.io/Tools-Website/tools/prompt-helper.html"/>
+<link rel="icon" type="image/svg+xml" href="/Tools-Website/favicon.svg"/>
+<link rel="shortcut icon" href="/Tools-Website/favicon.svg"/>
+<link rel="apple-touch-icon" href="/Tools-Website/favicon.svg"/>
+<link rel="manifest" href="/Tools-Website/site.webmanifest"/>
+<meta name="theme-color" content="#06b6d4"/>
+<meta name="application-name" content="ToolNest Studio"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="ToolNest Studio"/>
+<meta property="og:title" content="AI Prompt Helper | ToolNest Studio"/>
+<meta property="og:description" content="Build powerful AI prompts for ChatGPT, Claude, Gemini and more."/>
+<meta property="og:url" content="https://sattarwajith-boop.github.io/Tools-Website/tools/prompt-helper.html"/>
+<meta property="og:image" content="https://sattarwajith-boop.github.io/Tools-Website/og-image.svg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="AI Prompt Helper | ToolNest Studio"/>
+<meta name="twitter:description" content="Build powerful AI prompts for ChatGPT, Claude, Gemini and more."/>
+<meta name="twitter:image" content="https://sattarwajith-boop.github.io/Tools-Website/og-image.svg"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AI Prompt Helper","url":"https://sattarwajith-boop.github.io/Tools-Website/tools/prompt-helper.html","description":"Build powerful AI prompts for ChatGPT, Claude, Gemini and more.","publisher":{"@type":"Organization","name":"ToolNest Studio","logo":{"@type":"ImageObject","url":"https://sattarwajith-boop.github.io/Tools-Website/logo.svg"}},"applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body>
+<div class="cd" id="cd"></div><div class="cr" id="cr"></div>
+<div class="gbg"></div><div class="orb o1"></div><div class="orb o2"></div>
+<nav id="tnav"><a class="nb" href="../index.html"><div class="nl">TN</div><span class="nn">ToolNest Studio</span></a><ul class="nls"><li><a href="../index.html" >Home</a></li><li><a href="../index.html#tools" >All Tools</a></li><li><a href="../about.html" >About</a></li><li><a href="../contact.html" >Contact</a></li><li><a href="../contact.html" class="nc">Contact</a></li></ul></nav>
+<main>
+<div class="th2 rv"><div class="bc"><a href="../index.html">Home</a><span>/</span><a href="../index.html#tools">Tools</a><span>/</span><span>AI Prompt Helper</span></div><div class="tbg" style="color:var(--cy);background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.28)">🤖 AI Tools</div><h1>🤖 <span class="gt">AI Prompt Helper</span></h1><p>Build powerful, structured prompts for any AI model. Set a role, goal, audience, tone, and constraints — then generate a ready-to-use prompt.</p></div>
+<div class="con" style="padding-bottom:5rem">
+  <div class="tc rv">
+    <div class="th"><div class="tt"><div class="td2" style="background:var(--cy)"></div>Prompt Builder</div>
+      <div class="ta"><button class="bsm bgsm" id="ph-copy">Copy Prompt</button></div>
+    </div>
+    <div class="tb fgg" style="max-width:760px">
+      <div class="fr">
+        <div class="fg"><label class="fl">Goal / Task</label><input class="fi" id="ph-goal" value="Write a landing page for a budgeting app"/></div>
+        <div class="fg"><label class="fl">Target Audience</label><input class="fi" id="ph-audience" value="first-time freelancers"/></div>
+      </div>
+      <div class="fr">
+        <div class="fg"><label class="fl">Role (You are a…)</label><input class="fi" id="ph-role" value="senior conversion copywriter"/></div>
+        <div class="fg"><label class="fl">Tone</label><input class="fi" id="ph-tone" value="clear, warm, confident"/></div>
+      </div>
+      <div class="fg"><label class="fl">Constraints / Rules</label><textarea class="ft" id="ph-constraints" rows="3">Keep it concise, avoid hype, easy reading level.</textarea></div>
+      <div>
+        <label class="fl" style="margin-bottom:.55rem">Template Style</label>
+        <div class="bw">
+          <button class="bsm bpsm ph-tpl" data-t="structured">Structured</button>
+          <button class="bsm bgsm ph-tpl" data-t="expert">Expert</button>
+          <button class="bsm bgsm ph-tpl" data-t="system">System</button>
+          <button class="bsm bgsm ph-tpl" data-t="brief">Brief</button>
+        </div>
+      </div>
+      <div class="fg"><label class="fl">Generated Prompt</label><textarea class="ft" id="ph-out" rows="11" readonly></textarea></div>
+    </div>
+  </div>
+</div>
+</main>
+<footer class="sf"><div class="fg2"><div class="fb"><div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem"><div class="nl">TN</div><strong style="font-size:.98rem;font-weight:800">ToolNest Studio</strong></div><p style="font-size:.8rem;color:var(--t3);line-height:1.6;max-width:255px">22+ free AI browser tools. No account, no upload, 100% private.</p></div><div class="fc"><h4>Popular Tools</h4><a href="../tools/grammar-checker.html">Grammar Checker</a><a href="../tools/ai-detector.html">AI Detector</a><a href="../tools/lesson-generator.html">Lesson Generator</a><a href="../tools/thumbnail-creator.html">Thumbnail Creator</a></div><div class="fc"><h4>Company</h4><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms-and-conditions.html">Terms</a><a href="../disclaimer.html">Disclaimer</a></div></div><div class="fbot"><span>© 2025 ToolNest Studio. All rights reserved.</span><span>100% Browser-Powered</span></div></footer>
+<script src="../shared.js"></script>
+<script>
+function buildPrompt(t){
+  const g=document.getElementById('ph-goal').value,a=document.getElementById('ph-audience').value,r=document.getElementById('ph-role').value,to=document.getElementById('ph-tone').value,c=document.getElementById('ph-constraints').value;
+  const tpls={structured:`You are a ${r}.
+
+Task: ${g}
+Audience: ${a}
+Tone: ${to}
+
+Constraints:
+${c}
+
+Provide a complete, structured response.`,expert:`Act as an expert ${r} with 10+ years of experience.
+
+Task: ${g}
+Audience: ${a}
+Tone: ${to}
+
+Rules: ${c}`,system:`SYSTEM: You are ${r}. Always respond in a ${to} tone.
+
+USER: ${g}
+
+Context: Writing for ${a}.
+Rules: ${c}`,brief:`${r} — ${g} — for ${a} — ${to} tone. ${c}`};
+  document.getElementById('ph-out').value=tpls[t]||tpls.structured;
+}
+document.querySelectorAll('.ph-tpl').forEach(btn=>btn.addEventListener('click',function(){
+  document.querySelectorAll('.ph-tpl').forEach(b=>{b.className='bsm bgsm ph-tpl'});
+  this.className='bsm bpsm ph-tpl';buildPrompt(this.dataset.t);
+}));
+['ph-goal','ph-audience','ph-role','ph-tone','ph-constraints'].forEach(id=>{
+  document.getElementById(id).addEventListener('input',()=>{const a=document.querySelector('.ph-tpl.bpsm');buildPrompt(a?a.dataset.t:'structured');});
+});
+document.getElementById('ph-copy').onclick=()=>{navigator.clipboard.writeText(document.getElementById('ph-out').value);document.getElementById('ph-copy').textContent='Copied ✓';setTimeout(()=>document.getElementById('ph-copy').textContent='Copy Prompt',1400);};
+buildPrompt('structured');
+</script>
+</body>
+</html>
