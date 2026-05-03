@@ -2,17 +2,29 @@
   "name": "ToolNest Studio",
   "short_name": "ToolNest",
   "description": "Free browser-powered AI, writing, image, document, finance and creator tools.",
-  "start_url": "/Tools-Website/",
-  "scope": "/Tools-Website/",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#030712",
   "theme_color": "#06b6d4",
   "icons": [
     {
-      "src": "/Tools-Website/favicon.svg",
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
       "sizes": "64x64",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }
