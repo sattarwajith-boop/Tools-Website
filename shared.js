@@ -23,6 +23,30 @@
     }
   });
 
+  // Homepage upgrade: show the new QR tool and updated 23+ count without risky full-page rewrites.
+  if(location.pathname==='/' || /index\.html$/.test(location.pathname)){
+    document.title='ToolNest Studio | 23+ Free Browser-Powered AI Tools';
+    var homeDesc=document.querySelector('meta[name="description"]');
+    if(homeDesc) homeDesc.setAttribute('content','23+ free browser-powered AI tools for writing, images, grammar, QR codes, lessons, thumbnails and more.');
+    document.querySelectorAll('meta[property="og:title"],meta[name="twitter:title"]').forEach(function(m){m.setAttribute('content','ToolNest Studio | 23+ Free Browser-Powered AI Tools');});
+    document.querySelectorAll('meta[property="og:description"],meta[name="twitter:description"]').forEach(function(m){m.setAttribute('content','23+ free browser-powered AI tools for writing, images, grammar, QR codes, lessons, thumbnails and more.');});
+    document.querySelectorAll('body *').forEach(function(el){
+      if(el.childElementCount===0 && el.textContent && el.textContent.indexOf('22+')>-1){
+        el.textContent=el.textContent.replace(/22\+/g,'23+');
+      }
+    });
+    var toolsGrid=document.querySelector('#tools .con > div[style*="grid-template-columns"]') || document.querySelector('#tools div[style*="grid-template-columns"]');
+    if(toolsGrid && !document.querySelector('a[href="tools/qr-code-generator.html"]')){
+      var card=document.createElement('a');
+      card.className='tc-card rv on';
+      card.href='tools/qr-code-generator.html';
+      card.setAttribute('data-cat','utilities');
+      card.setAttribute('data-name','qr code generator url text vcard barcode download png');
+      card.innerHTML='<div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.85rem"><div style="width:42px;height:42px;border-radius:11px;background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.15);display:flex;align-items:center;justify-content:center;font-size:1.2rem">▦</div><span style="padding:.18rem .55rem;border-radius:5px;font-size:.66rem;font-weight:700;color:var(--em);background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.2)">New</span></div><div style="font-weight:700;font-size:.94rem;margin-bottom:.38rem;color:var(--t)">QR Code Generator</div><div style="font-size:.78rem;color:var(--t2);line-height:1.5;margin-bottom:.875rem">Create QR codes from URLs or text and download as PNG.</div><div style="display:flex;align-items:center;justify-content:space-between"><span style="font-size:.7rem;color:var(--t3);font-weight:600;text-transform:uppercase;letter-spacing:.05em">utilities</span><span style="font-size:.76rem;font-weight:700;color:var(--cy)">Open →</span></div>';
+      toolsGrid.insertBefore(card,toolsGrid.firstChild);
+    }
+  }
+
   // Safer public-facing wording for fictional payment-card test data.
   if(location.pathname.indexOf('/tools/credit-card-generator.html')>-1){
     document.title='Payment Card Test Data Generator | ToolNest Studio';
