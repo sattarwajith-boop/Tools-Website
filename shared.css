@@ -1,4 +1,3 @@
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Outfit',sans-serif;background:#030712;color:#f1f5f9;overflow-x:hidden;min-height:100vh;-webkit-font-smoothing:antialiased}
@@ -18,7 +17,7 @@ ul{list-style:none}
   --cy:#06b6d4;--cy2:#67e8f9;
   --vi:#8b5cf6;--vi2:#a78bfa;
   --pk:#ec4899;--em:#10b981;--am:#f59e0b;
-  --r:12px;--rl:18px;--rx:22px;
+  --r:12px;--rl:18px;--rx:22px;--r-lg:22px;
 }
 
 /* cursor */
@@ -161,11 +160,11 @@ details p,details div{padding:0 1.2rem .95rem;font-size:.82rem;color:var(--t2);l
   .nls{display:none}
   .sp{grid-template-columns:1fr}
   .fr{grid-template-columns:1fr}
-  .sg{grid-template-columns:1fr 1fr}
-  .fg2{grid-template-columns:1fr}
-}
-@media(max-width:480px){
   .sg{grid-template-columns:1fr}
-  .con{padding:0 1rem}
+  .fg2{grid-template-columns:1fr;gap:1.8rem}
+  nav{padding:0 1rem}
+  .nn{font-size:.95rem}
+  .con{padding:0 1.1rem}
+  .th2{padding:4rem 1.2rem 2rem}
   .tb{padding:1.1rem}
 }
