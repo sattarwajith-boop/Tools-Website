@@ -9,6 +9,7 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 - Word Counter Pro added with word count, reading time, keyword density, readability, sentence complexity, passive voice estimate, copy report, and TXT export.
 - Markdown Editor added with live preview, Markdown/HTML copy, Markdown/HTML downloads, local processing note, and keyboard shortcuts.
 - Color Palette Generator added with palette moods, base color, color locking, HEX/RGB copy, CSS variable export, CSS download, and local processing.
+- Pomodoro Timer added with focus/short/long sessions, custom durations, sound alerts, auto-start option, local stats, session log, and keyboard shortcuts.
 - Global dark/light mode toggle added and saved to `localStorage`.
 - Tool favorites added and saved to `localStorage`.
 - Recently used tools added and saved to `localStorage`.
@@ -68,7 +69,7 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 - ✅ Word Counter Pro
 - ✅ Markdown Editor
 - ✅ Color Palette Generator
-- Pomodoro Timer
+- ✅ Pomodoro Timer
 - Countdown Timer / Clock
 - Random Name Generator
 - Tip Calculator
