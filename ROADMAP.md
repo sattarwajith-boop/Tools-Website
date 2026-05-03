@@ -6,6 +6,7 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 
 - QR Code Generator upgraded with Text/URL mode, vCard mode, PNG export, SVG export, copy image, local processing note, and keyboard shortcuts.
 - JSON Formatter & Validator added with format, validate, minify, copy, download, error location hints, and local processing.
+- Word Counter Pro added with word count, reading time, keyword density, readability, sentence complexity, passive voice estimate, copy report, and TXT export.
 - Global dark/light mode toggle added and saved to `localStorage`.
 - Tool favorites added and saved to `localStorage`.
 - Recently used tools added and saved to `localStorage`.
@@ -62,7 +63,7 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 
 ### Tier 1 — High Impact, Fast to Build
 - ✅ QR Code Generator
-- Word Counter Pro
+- ✅ Word Counter Pro
 - Markdown Editor
 - Color Palette Generator
 - Pomodoro Timer
@@ -124,4 +125,4 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 2. ✅ JSON Formatter & Validator — useful for developers every day.
 3. Cover Letter Generator — high user value, but should be API-safe.
 4. Color Palette Generator — visual, shareable, and designer-friendly.
-5. Word Counter Pro — upgrades the existing reading-time workflow with deeper analysis.
+5. ✅ Word Counter Pro — upgrades the existing reading-time workflow with deeper analysis.
