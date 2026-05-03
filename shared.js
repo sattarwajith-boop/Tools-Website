@@ -1,5 +1,28 @@
-
 (function(){
+  // Global design-token fallback for pages that use var(--r-lg).
+  document.documentElement.style.setProperty('--r-lg','22px');
+
+  // Remove duplicate Contact text link when the highlighted Contact CTA exists.
+  document.querySelectorAll('nav .nls').forEach(function(list){
+    var contactLinks=[].slice.call(list.querySelectorAll('a[href$="contact.html"]'));
+    var cta=contactLinks.find(function(a){return a.classList.contains('nc');});
+    if(cta){
+      contactLinks.forEach(function(a){
+        if(a!==cta && a.textContent.trim().toLowerCase()==='contact'){
+          var li=a.closest('li');
+          if(li) li.remove();
+        }
+      });
+    }
+  });
+
+  // Keep footer copyright year current across static pages.
+  document.querySelectorAll('.fbot span:first-child').forEach(function(el){
+    if(/©\s*\d{4}\s*ToolNest Studio\./.test(el.textContent)){
+      el.textContent='© '+new Date().getFullYear()+' ToolNest Studio.';
+    }
+  });
+
   // cursor
   if(window.matchMedia('(pointer:fine)').matches){
     const d=document.getElementById('cd'),r=document.getElementById('cr');
