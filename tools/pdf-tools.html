@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>PDF Tools | ToolNest Studio</title><meta name="description" content="Merge PDFs and extract page ranges — all in your browser, nothing uploaded."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/><link rel="stylesheet" href="../shared.css"/>
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+</head>
+<body>
+<div class="cd" id="cd"></div><div class="cr" id="cr"></div>
+<div class="gbg"></div><div class="orb o1"></div><div class="orb o2"></div>
+<nav id="tnav"><a class="nb" href="../index.html"><div class="nl">TN</div><span class="nn">ToolNest Studio</span></a><ul class="nls"><li><a href="../index.html">Home</a></li><li><a href="../index.html#tools">All Tools</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../contact.html" class="nc">Contact</a></li></ul></nav><main><div class="th2 rv"><div class="bc"><a href="../index.html">Home</a><span>/</span><a href="../index.html#tools">Tools</a><span>/</span><span>PDF Tools</span></div><div class="tbg" style="color:var(--pk);background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.28)">📕 Documents</div><h1>📕 <span class="gt">PDF Tools</span></h1><p>Merge multiple PDFs into one document, or extract specific page ranges — all processed locally in your browser using PDF-lib.</p></div>
+<div class="con" style="padding-bottom:5rem">
+<div class="tc rv" style="max-width:680px;margin:0 auto">
+  <div class="th"><div class="tt"><div class="td2" style="background:var(--pk)"></div>PDF Tools</div></div>
+  <div class="tb fgg">
+    <div class="fg"><label class="fl">Select PDF Files</label><input type="file" id="pdf-files" accept="application/pdf" multiple/></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem">
+      <div style="background:rgba(255,255,255,.03);border:1px solid var(--b);border-radius:var(--r-lg);padding:1.25rem">
+        <div style="font-weight:700;font-size:.9rem;margin-bottom:.4rem">🔗 Merge PDFs</div>
+        <p style="font-size:.8rem;color:var(--t2);line-height:1.5;margin-bottom:.875rem">Combine multiple PDFs into one file.</p>
+        <button class="bsm bpsm" id="pdf-merge" style="width:100%;padding:.6rem">Merge &amp; Download</button>
+      </div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid var(--b);border-radius:var(--r-lg);padding:1.25rem">
+        <div style="font-weight:700;font-size:.9rem;margin-bottom:.4rem">✂️ Extract Pages</div>
+        <p style="font-size:.8rem;color:var(--t2);line-height:1.5;margin-bottom:.5rem">Extract page range from first PDF.</p>
+        <input class="fi" id="pdf-range" placeholder="e.g. 1-3" style="margin-bottom:.6rem;font-size:.875rem"/>
+        <button class="bsm bgsm" id="pdf-extract" style="width:100%;padding:.6rem">Extract Range</button>
+      </div>
+    </div>
+    <div class="rb" id="pdf-status">Select one or more PDF files to get started.</div>
+  </div>
+</div>
+</div></main><footer class="sf"><div class="fg2"><div class="fb"><div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem"><div class="nl">TN</div><strong style="font-size:.98rem;font-weight:800">ToolNest Studio</strong></div><p style="font-size:.8rem;color:var(--t3);line-height:1.6;max-width:255px">22+ free AI browser tools.</p></div><div class="fc"><h4>Tools</h4><a href="../tools/grammar-checker.html">Grammar Checker</a><a href="../tools/ai-detector.html">AI Detector</a><a href="../tools/lesson-generator.html">Lesson Generator</a></div><div class="fc"><h4>Company</h4><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../privacy-policy.html">Privacy</a></div></div><div class="fbot"><span>© 2025 ToolNest Studio.</span><span>100% Browser-Powered</span></div></footer>
+<script src="../shared.js"></script><script>
+function ps(msg,cls){var el=document.getElementById("pdf-status");el.textContent=msg;el.className="rb"+(cls?" "+cls:"");}
+document.getElementById("pdf-merge").onclick=async function(){
+  var files=[...document.getElementById("pdf-files").files];
+  if(!files.length){ps("Please select PDF files first.","rw");return;}
+  if(!window.PDFLib){ps("PDF library not loaded. Check your internet connection.","re");return;}
+  ps("Merging PDFs…");
+  try{
+    var merged=await PDFLib.PDFDocument.create();
+    for(var f of files){var doc=await PDFLib.PDFDocument.load(await f.arrayBuffer());var pp=await merged.copyPages(doc,doc.getPageIndices());pp.forEach(function(p){merged.addPage(p);});}
+    var bytes=await merged.save();
+    var a=document.createElement("a");a.href=URL.createObjectURL(new Blob([bytes],{type:"application/pdf"}));a.download="merged.pdf";a.click();
+    ps("Merged "+files.length+" file(s) successfully.","rs");
+  }catch(e){ps("Error: "+e.message,"re");}
+};
+document.getElementById("pdf-extract").onclick=async function(){
+  var files=[...document.getElementById("pdf-files").files];
+  if(!files.length){ps("Please select a PDF file first.","rw");return;}
+  if(!window.PDFLib){ps("PDF library not loaded.","re");return;}
+  var range=document.getElementById("pdf-range").value.trim();
+  var m=range.match(/^(\d+)\s*-\s*(\d+)$/);
+  if(!m){ps("Enter a valid range like 1-3.","rw");return;}
+  var from=parseInt(m[1])-1,to=parseInt(m[2])-1;
+  ps("Extracting pages…");
+  try{
+    var src=await PDFLib.PDFDocument.load(await files[0].arrayBuffer());
+    var total=src.getPageCount();
+    var idxs=[];for(var i=from;i<=Math.min(to,total-1);i++)idxs.push(i);
+    if(!idxs.length){ps("No valid pages in range (PDF has "+total+" pages).","rw");return;}
+    var out=await PDFLib.PDFDocument.create();
+    var pages=await out.copyPages(src,idxs);
+    pages.forEach(function(p){out.addPage(p);});
+    var bytes=await out.save();
+    var a=document.createElement("a");a.href=URL.createObjectURL(new Blob([bytes],{type:"application/pdf"}));a.download="extracted.pdf";a.click();
+    ps("Extracted pages "+(from+1)+"–"+(Math.min(to,total-1)+1)+".","rs");
+  }catch(e){ps("Error: "+e.message,"re");}
+};
+</script>
+</body></html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Thumbnail Creator | ToolNest Studio</title><meta name="description" content="Design bold YouTube and social media thumbnails — download as PNG."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/><link rel="stylesheet" href="../shared.css"/>
+</head>
+<body>
+<div class="cd" id="cd"></div><div class="cr" id="cr"></div>
+<div class="gbg"></div><div class="orb o1"></div><div class="orb o2"></div>
+<nav id="tnav"><a class="nb" href="../index.html"><div class="nl">TN</div><span class="nn">ToolNest Studio</span></a><ul class="nls"><li><a href="../index.html">Home</a></li><li><a href="../index.html#tools">All Tools</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../contact.html" class="nc">Contact</a></li></ul></nav><main><div class="th2 rv"><div class="bc"><a href="../index.html">Home</a><span>/</span><a href="../index.html#tools">Tools</a><span>/</span><span>Thumbnail Creator</span></div><div class="tbg" style="color:var(--pk);background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.28)">🎬 Creator Tools</div><h1>🎬 <span class="gt">Thumbnail Creator</span></h1><p>Design eye-catching thumbnails with 6 templates, custom text, colors, and optional background image. Download as PNG instantly.</p></div>
+<div class="con" style="padding-bottom:5rem">
+  <div style="display:grid;grid-template-columns:320px 1fr;gap:1.4rem;align-items:start" class="rv">
+    <div class="tc">
+      <div class="th"><div class="tt"><div class="td2" style="background:var(--pk)"></div>Design</div>
+        <div class="ta"><button class="bsm bgsm" id="th-dl" disabled>⬇ Download PNG</button></div>
+      </div>
+      <div class="tb fgg">
+        <div class="fg"><label class="fl">Size Preset</label><select class="fs" id="th-size"><option value="1280x720">YouTube 1280×720</option><option value="1920x1080">Full HD 1920×1080</option><option value="1200x630">OG Image 1200×630</option><option value="1080x1080">Square 1080×1080</option></select></div>
+        <div class="fg"><label class="fl">Template</label>
+          <div id="th-tpls" style="display:grid;grid-template-columns:repeat(3,1fr);gap:.45rem">
+            <button class="bsm bpsm th-tpl" data-t="bold" style="font-size:.7rem">Bold Left</button>
+            <button class="bsm bgsm th-tpl" data-t="center" style="font-size:.7rem">Centered</button>
+            <button class="bsm bgsm th-tpl" data-t="split" style="font-size:.7rem">Split</button>
+            <button class="bsm bgsm th-tpl" data-t="top" style="font-size:.7rem">Top Banner</button>
+            <button class="bsm bgsm th-tpl" data-t="dark" style="font-size:.7rem">Dark Neon</button>
+            <button class="bsm bgsm th-tpl" data-t="gradient" style="font-size:.7rem">Gradient</button>
+          </div>
+        </div>
+        <div class="fg"><label class="fl">Main Title</label><input class="fi" id="th-title" value="10 Tips That Will Change Your Life" maxlength="60"/></div>
+        <div class="fg"><label class="fl">Subtitle</label><input class="fi" id="th-sub" value="Watch This Before You Start" maxlength="80"/></div>
+        <div class="fg"><label class="fl">Emoji</label><input class="fi" id="th-emoji" value="🔥" maxlength="4" style="font-size:1.2rem"/></div>
+        <div class="fr">
+          <div class="fg"><label class="fl">BG Color 1</label><input type="color" id="th-bg1" value="#0a0a1a"/></div>
+          <div class="fg"><label class="fl">BG Color 2</label><input type="color" id="th-bg2" value="#1a1040"/></div>
+        </div>
+        <div class="fr">
+          <div class="fg"><label class="fl">Title Color</label><input type="color" id="th-tc" value="#ffffff"/></div>
+          <div class="fg"><label class="fl">Accent Color</label><input type="color" id="th-ac" value="#06b6d4"/></div>
+        </div>
+        <div class="fg"><label class="fl">BG Image (optional)</label><input type="file" id="th-img" accept="image/*"/></div>
+        <div class="fg"><label class="fl">BG Opacity: <span id="th-opv">40%</span></label><input type="range" id="th-op" min="0" max="100" value="40"/></div>
+        <button class="bsm bpsm" id="th-render" style="width:100%;padding:.65rem">Render Thumbnail ⚡</button>
+      </div>
+    </div>
+    <div class="tc">
+      <div class="th"><div class="tt"><div class="td2" style="background:var(--em)"></div>Preview</div><div class="mc" id="th-meta"></div></div>
+      <div class="tb" style="text-align:center">
+        <div id="th-ph" style="min-height:300px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.02);border-radius:var(--r);padding:2rem">
+          <div style="color:var(--t3);text-align:center"><div style="font-size:3rem;margin-bottom:.75rem">🎬</div><div style="font-weight:600">Configure and click Render</div></div>
+        </div>
+        <canvas id="th-canvas" style="display:none;max-width:100%;border-radius:var(--r-lg);border:1px solid var(--b)"></canvas>
+      </div>
+    </div>
+  </div>
+</div></main><footer class="sf"><div class="fg2"><div class="fb"><div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem"><div class="nl">TN</div><strong style="font-size:.98rem;font-weight:800">ToolNest Studio</strong></div><p style="font-size:.8rem;color:var(--t3);line-height:1.6;max-width:255px">22+ free AI browser tools.</p></div><div class="fc"><h4>Tools</h4><a href="../tools/grammar-checker.html">Grammar Checker</a><a href="../tools/ai-detector.html">AI Detector</a><a href="../tools/lesson-generator.html">Lesson Generator</a></div><div class="fc"><h4>Company</h4><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../privacy-policy.html">Privacy</a></div></div><div class="fbot"><span>© 2025 ToolNest Studio.</span><span>100% Browser-Powered</span></div></footer>
+<script src="../shared.js"></script><script>
+let thTpl='bold',thBg=null;
+document.getElementById('th-op').addEventListener('input',function(){document.getElementById('th-opv').textContent=this.value+'%';});
+document.getElementById('th-img').addEventListener('change',async e=>{const f=e.target.files[0];if(f)thBg=await createImageBitmap(f);});
+document.querySelectorAll('.th-tpl').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.th-tpl').forEach(x=>x.className='bsm bgsm th-tpl');b.className='bsm bpsm th-tpl';thTpl=b.dataset.t;if(document.getElementById('th-canvas').style.display!=='none')document.getElementById('th-render').click();}));
+function wt(ctx,text,x,y,maxW,lh){const words=text.split(' ');let line='';let lines=[];for(const w of words){const test=line?line+' '+w:w;if(ctx.measureText(test).width>maxW&&line){lines.push(line);line=w;}else line=test;}if(line)lines.push(line);lines.forEach((l,i)=>ctx.fillText(l,x,y+i*lh));return lines.length;}
+document.getElementById('th-render').addEventListener('click',()=>{
+  const [W,H]=document.getElementById('th-size').value.split('x').map(Number);
+  const title=document.getElementById('th-title').value||'Your Title Here';
+  const sub=document.getElementById('th-sub').value||'';
+  const emoji=document.getElementById('th-emoji').value||'';
+  const c1=document.getElementById('th-bg1').value,c2=document.getElementById('th-bg2').value;
+  const tc=document.getElementById('th-tc').value,ac=document.getElementById('th-ac').value;
+  const op=parseInt(document.getElementById('th-op').value)/100;
+  const cv=document.getElementById('th-canvas');cv.width=W;cv.height=H;
+  const ctx=cv.getContext('2d');
+  const gr=ctx.createLinearGradient(0,0,W,H);gr.addColorStop(0,c1);gr.addColorStop(1,c2);
+  ctx.fillStyle=gr;ctx.fillRect(0,0,W,H);
+  if(thBg&&op>0){ctx.globalAlpha=op;const sc=Math.max(W/thBg.width,H/thBg.height);const sw=thBg.width*sc,sh=thBg.height*sc;ctx.drawImage(thBg,(W-sw)/2,(H-sh)/2,sw,sh);ctx.globalAlpha=1;}
+  const pad=W*.06;ctx.shadowColor='rgba(0,0,0,.7)';ctx.shadowBlur=20;
+  if(thTpl==='bold'){
+    ctx.fillStyle=ac;ctx.shadowBlur=0;ctx.fillRect(0,0,W*.018,H);ctx.shadowBlur=20;
+    if(emoji){ctx.font=`${W*.12}px serif`;ctx.textAlign='right';ctx.fillText(emoji,W-pad,H*.55);}
+    ctx.textAlign='left';ctx.font=`900 ${W*.085}px Outfit,Arial`;ctx.fillStyle=tc;
+    const lns=wt(ctx,title,pad+W*.025,H*.38,W*.68,W*.1);
+    if(sub){ctx.font=`600 ${W*.04}px Outfit,Arial`;ctx.fillStyle=ac;ctx.fillText(sub,pad+W*.025,H*.38+lns*W*.1+W*.055);}
+  }else if(thTpl==='center'){
+    ctx.fillStyle='rgba(0,0,0,.4)';ctx.shadowBlur=0;ctx.fillRect(0,0,W,H);ctx.shadowBlur=20;
+    if(emoji){ctx.font=`${W*.13}px serif`;ctx.textAlign='center';ctx.fillStyle=tc;ctx.fillText(emoji,W/2,H*.36);}
+    ctx.textAlign='center';ctx.font=`900 ${W*.088}px Outfit,Arial`;ctx.fillStyle=tc;
+    wt(ctx,title,W/2,H*(emoji?0.52:0.42),W*.85,W*.105);
+    if(sub){ctx.font=`600 ${W*.04}px Outfit,Arial`;ctx.fillStyle=ac;ctx.fillText(sub,W/2,H*.85);}
+  }else if(thTpl==='split'){
+    ctx.fillStyle='rgba(0,0,0,.5)';ctx.shadowBlur=0;ctx.fillRect(W*.5,0,W*.5,H);ctx.shadowBlur=20;
+    ctx.textAlign='left';ctx.font=`900 ${W*.082}px Outfit,Arial`;ctx.fillStyle=tc;
+    wt(ctx,title,W*.53,H*.35,W*.44,W*.1);
+    if(emoji){ctx.font=`${W*.18}px serif`;ctx.textAlign='center';ctx.shadowBlur=0;ctx.fillText(emoji,W*.25,H*.55);}
+    if(sub){ctx.shadowBlur=10;ctx.textAlign='left';ctx.font=`600 ${W*.036}px Outfit,Arial`;ctx.fillStyle=ac;ctx.fillText(sub,W*.53,H*.82);}
+  }else if(thTpl==='top'){
+    ctx.shadowBlur=0;ctx.fillStyle=ac;ctx.fillRect(0,0,W,H*.28);
+    ctx.textAlign='center';ctx.font=`800 ${W*.062}px Outfit,Arial`;ctx.fillStyle='#fff';ctx.fillText(sub||'WATCH NOW',W/2,H*.18);
+    ctx.shadowBlur=20;ctx.font=`900 ${W*.085}px Outfit,Arial`;ctx.fillStyle=tc;wt(ctx,title,W/2,H*.52,W*.88,W*.1);
+    if(emoji){ctx.font=`${W*.1}px serif`;ctx.shadowBlur=0;ctx.fillText(emoji,W/2,H*.9);}
+  }else if(thTpl==='dark'){
+    ctx.shadowBlur=30;ctx.shadowColor=ac;ctx.strokeStyle=ac;ctx.lineWidth=W*.012;ctx.strokeRect(W*.025,H*.035,W*.95,H*.93);
+    if(emoji){ctx.shadowBlur=0;ctx.font=`${W*.14}px serif`;ctx.textAlign='center';ctx.fillStyle=tc;ctx.fillText(emoji,W/2,H*.36);}
+    ctx.shadowColor=ac;ctx.shadowBlur=25;ctx.textAlign='center';ctx.font=`900 ${W*.085}px Outfit,Arial`;ctx.fillStyle=ac;wt(ctx,title,W/2,H*(emoji?0.52:0.44),W*.82,W*.1);
+    if(sub){ctx.shadowBlur=0;ctx.font=`600 ${W*.038}px Outfit,Arial`;ctx.fillStyle='rgba(255,255,255,.7)';ctx.fillText(sub,W/2,H*.88);}
+  }else{
+    ctx.shadowBlur=0;const r1=ctx.createRadialGradient(W*.2,H*.3,0,W*.2,H*.3,W*.45);r1.addColorStop(0,'rgba(139,92,246,.45)');r1.addColorStop(1,'transparent');ctx.fillStyle=r1;ctx.fillRect(0,0,W,H);
+    const r2=ctx.createRadialGradient(W*.8,H*.7,0,W*.8,H*.7,W*.4);r2.addColorStop(0,'rgba(236,72,153,.35)');r2.addColorStop(1,'transparent');ctx.fillStyle=r2;ctx.fillRect(0,0,W,H);
+    if(emoji){ctx.font=`${W*.13}px serif`;ctx.textAlign='center';ctx.fillStyle=tc;ctx.fillText(emoji,W/2,H*.34);}
+    ctx.shadowBlur=20;ctx.shadowColor='rgba(0,0,0,.5)';ctx.font=`900 ${W*.088}px Outfit,Arial`;ctx.fillStyle='#fff';ctx.textAlign='center';wt(ctx,title,W/2,H*(emoji?0.5:0.43),W*.86,W*.105);
+    if(sub){ctx.shadowBlur=0;ctx.font=`600 ${W*.038}px Outfit,Arial`;ctx.fillStyle='rgba(255,255,255,.8)';ctx.fillText(sub,W/2,H*.88);}
+  }
+  ctx.globalAlpha=.15;ctx.shadowBlur=0;ctx.textAlign='right';ctx.font=`500 ${W*.02}px Outfit,Arial`;ctx.fillStyle='#fff';ctx.fillText('ToolNest Studio',W-W*.022,H-H*.022);ctx.globalAlpha=1;
+  document.getElementById('th-ph').style.display='none';cv.style.display='block';
+  document.getElementById('th-dl').disabled=false;
+  document.getElementById('th-meta').innerHTML=`<div class="mch"><strong>${W}x${H}</strong></div><div class="mch">${thTpl} template</div>`;
+});
+document.getElementById('th-dl').addEventListener('click',()=>{const t=document.getElementById('th-title').value.replace(/\s+/g,'-').toLowerCase().slice(0,30);const a=document.createElement('a');a.href=document.getElementById('th-canvas').toDataURL('image/png');a.download=`thumbnail-${t}.png`;a.click();});
+['th-title','th-sub','th-emoji','th-bg1','th-bg2','th-tc','th-ac'].forEach(id=>{document.getElementById(id).addEventListener('input',()=>{if(document.getElementById('th-canvas').style.display!=='none')document.getElementById('th-render').click();});});
+</script>
+</body></html>
