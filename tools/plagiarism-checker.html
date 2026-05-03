@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Plagiarism Checker | ToolNest Studio</title>
+<meta name="description" content="Free plagiarism checker — detect repeated phrases and assess originality."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../shared.css"/>
+
+</head>
+<body>
+<div class="cd" id="cd"></div><div class="cr" id="cr"></div>
+<div class="gbg"></div><div class="orb o1"></div><div class="orb o2"></div>
+<nav id="tnav"><a class="nb" href="../index.html"><div class="nl">TN</div><span class="nn">ToolNest Studio</span></a><ul class="nls"><li><a href="../index.html" >Home</a></li><li><a href="../index.html#tools" >All Tools</a></li><li><a href="../about.html" >About</a></li><li><a href="../contact.html" >Contact</a></li><li><a href="../contact.html" class="nc">Contact</a></li></ul></nav>
+<main>
+<div class="th2 rv"><div class="bc"><a href="../index.html">Home</a><span>/</span><a href="../index.html#tools">Tools</a><span>/</span><span>Plagiarism Checker</span></div><div class="tbg" style="color:var(--cy);background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.28)">📋 AI Tools</div><h1>📋 <span class="gt">Plagiarism Checker</span></h1><p>Analyze text for internal repetition and originality. Compare two texts for vocabulary similarity, or check a single document for duplicate phrases.</p></div>
+<div class="con" style="padding-bottom:5rem">
+  <div style="display:flex;gap:.5rem;margin-bottom:1.25rem" class="rv">
+    <button class="bsm bpsm" id="pl-t1" onclick="plMode('single')">Single Text</button>
+    <button class="bsm bgsm" id="pl-t2" onclick="plMode('compare')">Compare Two Texts</button>
+  </div>
+  <!-- Single -->
+  <div id="pl-single">
+    <div class="sp rv">
+      <div class="tc">
+        <div class="th"><div class="tt"><div class="td2" style="background:var(--pk)"></div>Your Text</div>
+          <div class="ta"><button class="bsm bgsm" id="pl-clear">Clear</button><button class="bsm bpsm" id="pl-check">Analyze ⚡</button></div>
+        </div>
+        <div class="tb fgg">
+          <textarea class="ft" id="pl-in" rows="12" placeholder="Paste text to check for internal repetition…">Content marketing is a strategic approach focused on creating valuable content. Creating valuable content helps attract your target audience. Your target audience should receive content that addresses their needs. Content marketing through strategic content creation drives engagement with target audiences effectively.</textarea>
+          <div class="mc" id="pl-meta"></div>
+        </div>
+      </div>
+      <div>
+        <div class="tc">
+          <div class="th"><div class="tt"><div class="td2"></div>Originality Score</div></div>
+          <div class="tb" style="text-align:center">
+            <div style="font-size:3rem;font-weight:900;letter-spacing:-.06em;margin-bottom:.25rem" id="pl-score">—</div>
+            <div style="font-size:.78rem;color:var(--t3);font-weight:600;margin-bottom:1rem">Originality</div>
+            <div style="height:10px;background:rgba(255,255,255,.05);border-radius:5px;overflow:hidden;margin-bottom:1rem"><div id="pl-bar" style="height:100%;width:0;border-radius:5px;transition:width .7s ease;background:var(--em)"></div></div>
+            <div class="mc" id="pl-chips" style="justify-content:center"></div>
+            <div id="pl-verdict" style="margin-top:1rem"></div>
+          </div>
+        </div>
+        <div class="tc" style="margin-top:0">
+          <div class="th"><div class="tt"><div class="td2" style="background:var(--pk)"></div>Repeated Phrases</div></div>
+          <div class="tb"><div id="pl-phrases" style="font-size:.82rem;color:var(--t3)">Run analysis to see repeated phrases.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Compare -->
+  <div id="pl-compare" hidden>
+    <div class="sp rv">
+      <div class="tc"><div class="th"><div class="tt"><div class="td2"></div>Text A</div></div><div class="tb"><textarea class="ft" id="pl-a" rows="12" placeholder="Paste first text here…"></textarea></div></div>
+      <div class="tc"><div class="th"><div class="tt"><div class="td2" style="background:var(--vi)"></div>Text B</div></div><div class="tb"><textarea class="ft" id="pl-b" rows="12" placeholder="Paste second text here…"></textarea></div></div>
+    </div>
+    <div style="text-align:center;margin:1.25rem 0"><button class="btn bp" id="pl-cmp">Compare Texts ⚡</button></div>
+    <div id="pl-cmp-result"></div>
+  </div>
+</div>
+</main>
+<footer class="sf"><div class="fg2"><div class="fb"><div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem"><div class="nl">TN</div><strong style="font-size:.98rem;font-weight:800">ToolNest Studio</strong></div><p style="font-size:.8rem;color:var(--t3);line-height:1.6;max-width:255px">22+ free AI browser tools. No account, no upload, 100% private.</p></div><div class="fc"><h4>Popular Tools</h4><a href="../tools/grammar-checker.html">Grammar Checker</a><a href="../tools/ai-detector.html">AI Detector</a><a href="../tools/lesson-generator.html">Lesson Generator</a><a href="../tools/thumbnail-creator.html">Thumbnail Creator</a></div><div class="fc"><h4>Company</h4><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms-and-conditions.html">Terms</a><a href="../disclaimer.html">Disclaimer</a></div></div><div class="fbot"><span>© 2025 ToolNest Studio. All rights reserved.</span><span>100% Browser-Powered</span></div></footer>
+<script src="../shared.js"></script>
+<script>
+function plMode(m){document.getElementById('pl-single').hidden=m!=='single';document.getElementById('pl-compare').hidden=m!=='compare';document.getElementById('pl-t1').className='bsm '+(m==='single'?'bpsm':'bgsm');document.getElementById('pl-t2').className='bsm '+(m==='compare'?'bpsm':'bgsm');}
+function ngrams(words,n){var m={};for(var i=0;i<=words.length-n;i++){var g=words.slice(i,i+n).join(' ');m[g]=(m[g]||0)+1;}return m;}
+document.getElementById('pl-check').onclick=function(){var text=document.getElementById('pl-in').value.trim();if(!text)return;var words=text.toLowerCase().replace(/[^a-z0-9\s]/g,'').split(/\s+/).filter(Boolean);var total=words.length;if(total<15){document.getElementById('pl-verdict').innerHTML='<div class="rb rw">Need at least 15 words.</div>';return;}var tri=ngrams(words,3),quad=ngrams(words,4);var dt=Object.entries(tri).filter(function(x){return x[1]>1;});var dq=Object.entries(quad).filter(function(x){return x[1]>1;});var wf={};words.forEach(function(w){if(w.length>3)wf[w]=(wf[w]||0)+1;});var over=Object.entries(wf).filter(function(x){return x[1]>=4;}).sort(function(a,b){return b[1]-a[1];}).slice(0,8);var dup=dt.reduce(function(s,x){return s+x[0].split(' ').length*(x[1]-1);},0);var orig=Math.max(0,Math.min(100,Math.round((1-dup/(total*1.5))*100)));var col=orig>=80?'var(--em)':orig>=55?'var(--am)':'var(--pk)';document.getElementById('pl-score').textContent=orig+'%';document.getElementById('pl-score').style.color=col;document.getElementById('pl-bar').style.width=orig+'%';document.getElementById('pl-bar').style.background=col;document.getElementById('pl-chips').innerHTML='<div class="mch"><strong>'+total+'</strong> words</div><div class="mch"><strong>'+dt.length+'</strong> repeated 3-grams</div>';document.getElementById('pl-verdict').innerHTML='<div class="rb '+(orig>=80?'rs':orig>=55?'rw':'re')+'">'+(orig>=80?'High originality':orig>=55?'Moderate repetition':'High repetition - consider rewriting')+'</div>';var all=dt.concat(dq).sort(function(a,b){return b[1]-a[1];}).slice(0,12);document.getElementById('pl-phrases').innerHTML=all.length?all.map(function(x){return '<span style="display:inline-block;background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.2);border-radius:5px;padding:.18rem .55rem;font-size:.72rem;color:var(--pk);margin:.2rem;font-family:&quot;JetBrains Mono&quot;,monospace">&quot;'+x[0]+'&quot; x'+x[1]+'</span>';}).join('')+(over.length?'<div style="margin-top:.75rem;font-size:.72rem;color:var(--t3);margin-bottom:.3rem">Overused words:</div>'+over.map(function(x){return '<span style="display:inline-block;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);border-radius:5px;padding:.18rem .55rem;font-size:.72rem;color:var(--am);margin:.2rem">'+x[0]+' x'+x[1]+'</span>';}).join(''):''):'<span style="color:var(--em)">No significant repetition.</span>';document.getElementById('pl-meta').innerHTML='<div class="mch"><strong>'+total+'</strong> words</div>';};
+document.getElementById('pl-clear').onclick=function(){document.getElementById('pl-in').value='';document.getElementById('pl-score').textContent='-';document.getElementById('pl-bar').style.width='0';document.getElementById('pl-chips').innerHTML='';document.getElementById('pl-verdict').innerHTML='';document.getElementById('pl-phrases').textContent='Run analysis to see repeated phrases.';document.getElementById('pl-meta').innerHTML='';};
+document.getElementById('pl-cmp').onclick=function(){var a=document.getElementById('pl-a').value.trim(),b=document.getElementById('pl-b').value.trim();if(!a||!b)return;var wa=new Set(a.toLowerCase().split(/\s+/).filter(function(w){return w.length>3;}));var wb=new Set(b.toLowerCase().split(/\s+/).filter(function(w){return w.length>3;}));var inter=Array.from(wa).filter(function(w){return wb.has(w);});var uni=new Set(Array.from(wa).concat(Array.from(wb)));var sim=uni.size?Math.round(inter.length/uni.size*100):0;var col=sim>=70?'var(--pk)':sim>=40?'var(--am)':'var(--em)';document.getElementById('pl-cmp-result').innerHTML='<div class="tc"><div class="th"><div class="tt"><div class="td2" style="background:'+col+'"></div>Similarity Result</div></div><div class="tb" style="text-align:center"><div style="font-size:3.5rem;font-weight:900;color:'+col+';margin-bottom:.25rem">'+sim+'%</div><div style="font-size:.8rem;color:var(--t3);margin-bottom:1rem">Vocabulary Similarity</div><div style="height:10px;background:rgba(255,255,255,.05);border-radius:5px;overflow:hidden;margin-bottom:1rem"><div style="height:100%;width:'+sim+'%;background:'+col+';border-radius:5px"></div></div><div class="rb '+(sim>=70?'re':sim>=40?'rw':'rs')+'" style="text-align:left">'+(sim>=70?'High similarity detected.':sim>=40?'Moderate similarity.':'Texts appear largely distinct.')+'</div><p style="font-size:.75rem;color:var(--t3);margin-top:.75rem">Note: Uses Jaccard vocabulary similarity - not an internet search.</p></div></div>';};
+</script>
+</body>
+</html>

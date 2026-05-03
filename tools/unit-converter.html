@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Unit Converter | ToolNest Studio</title><meta name="description" content="Convert length, weight, temperature, area, and speed instantly."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/><link rel="stylesheet" href="../shared.css"/>
+
+</head>
+<body>
+<div class="cd" id="cd"></div><div class="cr" id="cr"></div>
+<div class="gbg"></div><div class="orb o1"></div><div class="orb o2"></div>
+<nav id="tnav"><a class="nb" href="../index.html"><div class="nl">TN</div><span class="nn">ToolNest Studio</span></a><ul class="nls"><li><a href="../index.html">Home</a></li><li><a href="../index.html#tools">All Tools</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../contact.html" class="nc">Contact</a></li></ul></nav><main><div class="th2 rv"><div class="bc"><a href="../index.html">Home</a><span>/</span><a href="../index.html#tools">Tools</a><span>/</span><span>Unit Converter</span></div><div class="tbg" style="color:var(--cy);background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.28)">📐 Utilities</div><h1>📐 <span class="gt">Unit Converter</span></h1><p>Convert between all major units of length, weight, temperature, area, and speed. Fast, accurate, and works offline.</p></div>
+<div class="con" style="padding-bottom:5rem">
+<div class="tc rv" style="max-width:560px;margin:0 auto">
+  <div class="th"><div class="tt"><div class="td2"></div>Unit Converter</div></div>
+  <div class="tb fgg">
+    <div class="fg"><label class="fl">Category</label>
+      <select class="fs" id="uc-cat">
+        <option value="length">Length</option>
+        <option value="weight">Weight / Mass</option>
+        <option value="temperature">Temperature</option>
+        <option value="area">Area</option>
+        <option value="speed">Speed</option>
+        <option value="volume">Volume</option>
+        <option value="digital">Digital Storage</option>
+      </select>
+    </div>
+    <div class="fg"><label class="fl">Value</label><input class="fi" type="number" id="uc-val" value="1"/></div>
+    <div class="fr">
+      <div class="fg"><label class="fl">From</label><select class="fs" id="uc-from"></select></div>
+      <div class="fg"><label class="fl">To</label><select class="fs" id="uc-to"></select></div>
+    </div>
+    <div style="background:linear-gradient(135deg,rgba(6,182,212,.08),rgba(139,92,246,.08));border:1px solid rgba(6,182,212,.2);border-radius:var(--r-lg);padding:1.4rem;text-align:center;font-size:1.25rem;font-weight:800" id="uc-result">—</div>
+    <button class="bsm bgsm" id="uc-swap" style="width:fit-content">⇄ Swap Units</button>
+  </div>
+</div>
+</div></main><footer class="sf"><div class="fg2"><div class="fb"><div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem"><div class="nl">TN</div><strong style="font-size:.98rem;font-weight:800">ToolNest Studio</strong></div><p style="font-size:.8rem;color:var(--t3);line-height:1.6;max-width:255px">22+ free AI browser tools.</p></div><div class="fc"><h4>Tools</h4><a href="../tools/grammar-checker.html">Grammar Checker</a><a href="../tools/ai-detector.html">AI Detector</a><a href="../tools/lesson-generator.html">Lesson Generator</a></div><div class="fc"><h4>Company</h4><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../privacy-policy.html">Privacy</a></div></div><div class="fbot"><span>© 2025 ToolNest Studio.</span><span>100% Browser-Powered</span></div></footer>
+<script src="../shared.js"></script><script>
+var UC={
+  length:{units:{m:"Meter",km:"Kilometer",cm:"Centimeter",mm:"Millimeter",mi:"Mile",ft:"Foot",inch:"Inch",yd:"Yard",nm:"Nautical Mile"},base:{m:1,km:0.001,cm:100,mm:1000,mi:0.000621371,ft:3.28084,inch:39.3701,yd:1.09361,nm:0.000539957},conv:function(v,f,t){return v/this.base[f]*this.base[t];}},
+  weight:{units:{kg:"Kilogram",g:"Gram",mg:"Milligram",lb:"Pound",oz:"Ounce",t:"Metric Ton",st:"Stone"},base:{kg:1,g:1000,mg:1000000,lb:2.20462,oz:35.274,t:0.001,st:0.157473},conv:function(v,f,t){return v/this.base[f]*this.base[t];}},
+  temperature:{units:{C:"Celsius",F:"Fahrenheit",K:"Kelvin"},conv:function(v,f,t){var c=f==="C"?v:f==="F"?(v-32)*5/9:v-273.15;return t==="C"?c:t==="F"?c*9/5+32:c+273.15;}},
+  area:{units:{m2:"m²",km2:"km²",cm2:"cm²",ft2:"ft²",inch2:"in²",acre:"Acre",ha:"Hectare",mi2:"mi²"},base:{m2:1,km2:1e-6,cm2:10000,ft2:10.7639,inch2:1550.0031,acre:0.000247105,ha:0.0001,mi2:3.861e-7},conv:function(v,f,t){return v/this.base[f]*this.base[t];}},
+  speed:{units:{ms:"m/s",kmh:"km/h",mph:"mph",kn:"Knot",ftps:"ft/s"},base:{ms:1,kmh:3.6,mph:2.23694,kn:1.94384,ftps:3.28084},conv:function(v,f,t){return v/this.base[f]*this.base[t];}},
+  volume:{units:{L:"Litre",mL:"Millilitre",m3:"m³",ft3:"ft³",gal:"US Gallon",qt:"US Quart",pt:"US Pint",cup:"Cup",fl_oz:"Fl Oz"},base:{L:1,mL:1000,m3:0.001,ft3:0.0353147,gal:0.264172,qt:1.05669,pt:2.11338,cup:4.22675,fl_oz:33.814},conv:function(v,f,t){return v/this.base[f]*this.base[t];}},
+  digital:{units:{B:"Byte",KB:"Kilobyte",MB:"Megabyte",GB:"Gigabyte",TB:"Terabyte",Kb:"Kilobit",Mb:"Megabit",Gb:"Gigabit"},base:{B:1,KB:1/1024,MB:1/1048576,GB:1/1073741824,TB:1/1099511627776,Kb:8/1024,Mb:8/1048576,Gb:8/1073741824},conv:function(v,f,t){return v/this.base[f]*this.base[t];}}
+};
+function ucPop(){
+  var cat=document.getElementById("uc-cat").value;
+  var cfg=UC[cat];
+  var opts=Object.entries(cfg.units).map(function(e){return "<option value=\""+e[0]+"\">"+e[1]+"</option>";}).join("");
+  document.getElementById("uc-from").innerHTML=opts;
+  document.getElementById("uc-to").innerHTML=opts;
+  if(document.getElementById("uc-to").options.length>1)document.getElementById("uc-to").selectedIndex=1;
+  ucConv();
+}
+function ucConv(){
+  var cat=document.getElementById("uc-cat").value;
+  var v=parseFloat(document.getElementById("uc-val").value);
+  var f=document.getElementById("uc-from").value;
+  var t=document.getElementById("uc-to").value;
+  if(isNaN(v)){document.getElementById("uc-result").innerHTML="—";return;}
+  var r=UC[cat].conv(v,f,t);
+  var fmt=parseFloat(r.toPrecision(7)).toLocaleString("en-US",{maximumSignificantDigits:7});
+  var fn=document.getElementById("uc-from").options[document.getElementById("uc-from").selectedIndex].text;
+  var tn=document.getElementById("uc-to").options[document.getElementById("uc-to").selectedIndex].text;
+  document.getElementById("uc-result").innerHTML=v+" "+fn+" = <strong style='color:var(--cy)'>"+fmt+" "+tn+"</strong>";
+}
+document.getElementById("uc-cat").addEventListener("change",ucPop);
+document.getElementById("uc-val").addEventListener("input",ucConv);
+document.getElementById("uc-from").addEventListener("change",ucConv);
+document.getElementById("uc-to").addEventListener("change",ucConv);
+document.getElementById("uc-swap").onclick=function(){
+  var fi=document.getElementById("uc-from"),ti=document.getElementById("uc-to");
+  var fv=fi.value,tv=ti.value;fi.value=tv;ti.value=fv;ucConv();
+};
+ucPop();
+</script>
+</body></html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Image Converter | ToolNest Studio</title><meta name="description" content="Convert, resize, and optimize images to PNG, JPEG, or WebP in your browser."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/><link rel="stylesheet" href="../shared.css"/>
+</head>
+<body>
+<div class="cd" id="cd"></div><div class="cr" id="cr"></div>
+<div class="gbg"></div><div class="orb o1"></div><div class="orb o2"></div>
+<nav id="tnav"><a class="nb" href="../index.html"><div class="nl">TN</div><span class="nn">ToolNest Studio</span></a><ul class="nls"><li><a href="../index.html">Home</a></li><li><a href="../index.html#tools">All Tools</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../contact.html" class="nc">Contact</a></li></ul></nav><main><div class="th2 rv"><div class="bc"><a href="../index.html">Home</a><span>/</span><a href="../index.html#tools">Tools</a><span>/</span><span>Image Converter</span></div><div class="tbg" style="color:var(--pk);background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.28)">🖼️ Images</div><h1>🖼️ <span class="gt">Image Converter</span></h1><p>Upload images and convert them to PNG, JPEG, or WebP. Resize, crop to presets, apply grayscale, and control quality — all processed in your browser, nothing uploaded.</p></div>
+<div class="con" style="padding-bottom:5rem">
+  <div class="tc rv">
+    <div class="th"><div class="tt"><div class="td2" style="background:var(--pk)"></div>Image Converter</div>
+      <div class="ta"><button class="bsm bpsm" id="ic-run">Convert Images ⚡</button></div>
+    </div>
+    <div class="tb fgg">
+      <div class="fr">
+        <div class="fg"><label class="fl">Upload Images (multiple)</label><input type="file" id="ic-files" accept="image/*" multiple/></div>
+        <div class="fg"><label class="fl">Output Format</label><select class="fs" id="ic-fmt"><option value="image/png">PNG</option><option value="image/jpeg" selected>JPEG</option><option value="image/webp">WebP</option></select></div>
+      </div>
+      <div class="fr">
+        <div class="fg"><label class="fl">Quality: <span id="ic-qv">85%</span></label><input type="range" id="ic-qual" min="0.1" max="1" step="0.05" value="0.85"/></div>
+        <div class="fg"><label class="fl">Max Width px (0 = keep)</label><input class="fi" type="number" id="ic-maxw" value="0" min="0"/></div>
+      </div>
+      <div class="fr">
+        <div class="fg"><label class="fl">Canvas Preset</label><select class="fs" id="ic-preset"><option value="original">Original size</option><option value="square">Square 1:1</option><option value="landscape">Landscape 16:9</option><option value="story">Story 9:16</option><option value="thumb">Thumbnail 4:3</option></select></div>
+        <div class="fg" style="justify-content:flex-end;padding-top:1.1rem"><label><input type="checkbox" id="ic-gray"/> Convert to grayscale</label></div>
+      </div>
+      <div id="ic-results" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.875rem;margin-top:.5rem"></div>
+    </div>
+  </div>
+</div></main><footer class="sf"><div class="fg2"><div class="fb"><div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem"><div class="nl">TN</div><strong style="font-size:.98rem;font-weight:800">ToolNest Studio</strong></div><p style="font-size:.8rem;color:var(--t3);line-height:1.6;max-width:255px">22+ free AI browser tools.</p></div><div class="fc"><h4>Tools</h4><a href="../tools/grammar-checker.html">Grammar Checker</a><a href="../tools/ai-detector.html">AI Detector</a><a href="../tools/lesson-generator.html">Lesson Generator</a></div><div class="fc"><h4>Company</h4><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../privacy-policy.html">Privacy</a></div></div><div class="fbot"><span>© 2025 ToolNest Studio.</span><span>100% Browser-Powered</span></div></footer>
+<script src="../shared.js"></script><script>
+document.getElementById('ic-qual').addEventListener('input',function(){document.getElementById('ic-qv').textContent=Math.round(this.value*100)+'%';});
+document.getElementById('ic-run').addEventListener('click',async()=>{
+  const files=[...document.getElementById('ic-files').files];
+  if(!files.length){alert('Please select images first.');return;}
+  const fmt=document.getElementById('ic-fmt').value;
+  const qual=parseFloat(document.getElementById('ic-qual').value);
+  const maxW=parseInt(document.getElementById('ic-maxw').value)||0;
+  const preset=document.getElementById('ic-preset').value;
+  const gray=document.getElementById('ic-gray').checked;
+  const res=document.getElementById('ic-results');res.innerHTML='';
+  for(const file of files){
+    const wrap=document.createElement('div');
+    wrap.style.cssText='background:var(--s);border:1px solid var(--b);border-radius:10px;padding:.75rem;text-align:center';
+    wrap.innerHTML='<div style="color:var(--t3);font-size:.75rem;padding:.5rem">Processing…</div>';
+    res.appendChild(wrap);
+    try{
+      const bmp=await createImageBitmap(file);
+      const sc=maxW>0?Math.min(1,maxW/bmp.width):1;
+      let w=Math.round(bmp.width*sc),h=Math.round(bmp.height*sc);
+      if(preset==='square'){const s=Math.min(w,h);w=h=s;}
+      else if(preset==='landscape'){h=Math.round(w*9/16);}
+      else if(preset==='story'){w=Math.round(h*9/16);}
+      else if(preset==='thumb'){h=Math.round(w*3/4);}
+      const cv=document.createElement('canvas');cv.width=w;cv.height=h;
+      const ctx=cv.getContext('2d');
+      if(gray)ctx.filter='grayscale(1)';
+      const fs=Math.min(w/bmp.width,h/bmp.height);
+      ctx.drawImage(bmp,Math.round((w-bmp.width*fs)/2),Math.round((h-bmp.height*fs)/2),Math.round(bmp.width*fs),Math.round(bmp.height*fs));
+      const blob=await new Promise(r=>cv.toBlob(r,fmt,qual));
+      const ext=fmt.split('/')[1].replace('jpeg','jpg');
+      const name=file.name.replace(/\.[^.]+$/,'.'+ext);
+      const url=URL.createObjectURL(blob);
+      const img=document.createElement('img');img.src=url;img.style.cssText='width:100%;border-radius:6px;display:block;margin-bottom:.5rem';
+      const link=document.createElement('a');link.href=url;link.download=name;link.style.cssText='font-size:.72rem;color:var(--cy);display:block';
+      const kb=(blob.size/1024).toFixed(1);link.textContent=`⬇ ${name} (${kb}KB)`;
+      wrap.innerHTML='';wrap.appendChild(img);wrap.appendChild(link);
+    }catch(e){wrap.innerHTML=`<div style="color:var(--pk);font-size:.75rem;padding:.5rem">Error: ${e.message}</div>`;}
+  }
+});
+</script>
+</body></html>
