@@ -22,6 +22,7 @@ ToolNest Studio prioritizes fast, browser-powered tools first. API-powered tools
 - CSS Gradient Generator added with linear/radial gradients, color stops, angle controls, presets, live preview, randomizer, copy CSS, CSS export, and local processing.
 - HTML Entity Encoder / Decoder added with named entity encoding, numeric entity encoding, entity decoding, line-break options, entity scanning, copy, TXT export, and local processing.
 - Meta Tag Generator added with SEO meta tags, Open Graph tags, Twitter Card tags, canonical links, robots tags, JSON-LD output, search preview, copy, HTML export, and local processing.
+- Keyword Density Checker added with word frequency, keyword density, two-word phrase analysis, target keyword density, SEO advice, copyable report, CSV export, and local processing.
 - Global dark/light mode toggle added and saved to `localStorage`.
 - Tool favorites added and saved to `localStorage`.
 - Recently used tools added and saved to `localStorage`.
@@ -109,7 +110,7 @@ ToolNest Studio prioritizes fast, browser-powered tools first. API-powered tools
 
 ### Tier 4 — SEO & Marketing Tools
 - ✅ Meta Tag Generator
-- Keyword Density Checker
+- ✅ Keyword Density Checker
 - OG Image Previewer
 - UTM Link Builder
 - Robots.txt Generator
