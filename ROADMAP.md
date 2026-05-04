@@ -1,32 +1,33 @@
 # ToolNest Studio Roadmap
 
-ToolNest Studio should continue to prioritize fast, browser-powered tools first. API-powered AI tools can be added later when they clearly improve the user experience and can be shipped safely without exposing keys.
+ToolNest Studio prioritizes fast, browser-powered tools first. API-powered tools can be added later when they improve the user experience and can be shipped safely.
 
 ## Implemented in Latest Batch
 
-- QR Code Generator upgraded with Text/URL mode, vCard mode, PNG export, SVG export, copy image, local processing note, and keyboard shortcuts.
-- JSON Formatter & Validator added with format, validate, minify, copy, download, error location hints, and local processing.
-- Word Counter Pro added with word count, reading time, keyword density, readability, sentence complexity, passive voice estimate, copy report, and TXT export.
-- Markdown Editor added with live preview, Markdown/HTML copy, Markdown/HTML downloads, local processing note, and keyboard shortcuts.
-- Color Palette Generator added with palette moods, base color, color locking, HEX/RGB copy, CSS variable export, CSS download, and local processing.
-- Pomodoro Timer added with focus/short/long sessions, custom durations, sound alerts, auto-start option, local stats, session log, and keyboard shortcuts.
-- Countdown Timer & Clock added with live clock, custom target date/time, presets, progress bar, sound alert, copied summary, local saving, and keyboard shortcuts.
-- Random Name Generator added with multiple name types, styles, quantity controls, formatting options, optional keyword, favorites, copy, TXT export, and local processing.
+- QR Code Generator upgraded with Text/URL mode, vCard mode, PNG/SVG export, copy image, local processing note, and keyboard shortcuts.
+- JSON Formatter & Validator added with format, validate, minify, copy, download, error hints, and local processing.
+- Word Counter Pro added with word count, reading time, keyword density, readability, passive voice estimate, copy report, and TXT export.
+- Markdown Editor added with live preview, Markdown/HTML copy, downloads, local processing note, and keyboard shortcuts.
+- Color Palette Generator added with moods, base color, color locking, HEX/RGB copy, CSS export, CSS download, and local processing.
+- Pomodoro Timer added with focus/break sessions, custom durations, sound alerts, local stats, session log, and keyboard shortcuts.
+- Countdown Timer & Clock added with live clock, custom target date/time, presets, progress bar, alert, copied summary, local saving, and shortcuts.
+- Random Name Generator added with multiple name types, styles, quantity controls, formatting options, keyword input, favorites, copy, TXT export, and local processing.
 - Tip Calculator added with tip presets, tax, discount, bill splitting, rounding options, copyable receipt, and local processing.
 - Base64 Encoder / Decoder added with text encoding, text decoding, URL-safe Base64, line splitting, file import, copy, TXT export, validation feedback, and local processing.
 - URL Encoder / Decoder added with URI component encoding, full URL encoding, URL decoding, plus-space option, query parameter preview, copy, TXT export, and local processing.
-- Hash Generator added with SHA-256, SHA-384, SHA-512, FNV-1a, byte-sum checksum, text file import, copy, TXT export, stats, and local processing.
-- Regex Tester added with pattern testing, global/ignore-case/multiline flags, live matches, replacement preview, copyable report, TXT export, and local processing.
-- Cron Expression Builder added with cron field controls, common presets, plain-English explanation, approximate upcoming run preview, copy cron, copy report, and local processing.
-- JWT Decoder added with local JWT header/payload decoding, common claim inspection, expiry status, sample token, copy JSON, JSON download, and local processing.
+- Hash Generator added with SHA hashes, FNV-1a, byte-sum checksum, text file import, copy, TXT export, stats, and local processing.
+- Regex Tester added with pattern testing, flags, live matches, replacement preview, copyable report, TXT export, and local processing.
+- Cron Expression Builder added with field controls, presets, plain-English explanation, approximate upcoming run preview, copy cron, copy report, and local processing.
+- JWT Decoder added with local header/payload decoding, common claim inspection, expiry status, sample token, copy JSON, JSON download, and local processing.
 - CSS Gradient Generator added with linear/radial gradients, color stops, angle controls, presets, live preview, randomizer, copy CSS, CSS export, and local processing.
+- HTML Entity Encoder / Decoder added with named entity encoding, numeric entity encoding, entity decoding, line-break options, entity scanning, copy, TXT export, and local processing.
 - Global dark/light mode toggle added and saved to `localStorage`.
 - Tool favorites added and saved to `localStorage`.
 - Recently used tools added and saved to `localStorage`.
 - Share button added to tool pages.
 - Simple thumbs up/down tool rating added locally.
-- Browser/local-processing badges added for newly supported homepage cards and tool-page labels.
-- Keyboard shortcuts added: `Ctrl/Cmd+Enter` to run primary action and `Escape` to clear on supported tools.
+- Browser/local-processing badges added for supported cards and tool-page labels.
+- Keyboard shortcuts added: `Ctrl/Cmd+Enter` to run and `Escape` to clear on supported tools.
 
 ## Existing Tool Improvements
 
@@ -37,7 +38,7 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 
 ### AI Detector
 - Add paragraph-by-paragraph scoring.
-- Show confidence ranges instead of a single rigid score.
+- Show confidence ranges.
 - Add comparison mode for two versions of the same text.
 
 ### Resume Builder
@@ -57,7 +58,7 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 - Add an emoji/sticker picker.
 
 ### Lesson Generator
-- Add differentiated instruction sections: below, at, and above grade level.
+- Add differentiated instruction sections.
 - Add homework extension activities.
 - Generate teacher answer keys.
 - Add a rubric generator.
@@ -93,7 +94,7 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 - ✅ Cron Expression Builder
 - ✅ JWT Decoder
 - ✅ CSS Gradient Generator
-- HTML Entity Encoder
+- ✅ HTML Entity Encoder
 
 ### Tier 3 — AI-Powered Tools
 - Cover Letter Generator
@@ -124,18 +125,10 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 ## Design & UX Improvements
 
 - ✅ Dark/light mode toggle saved to `localStorage`.
-- ✅ Tool favorites with a “My Favorites” quick-access bar.
+- ✅ Tool favorites with a My Favorites quick-access bar.
 - ✅ Recently used tools section.
-- ✅ Keyboard shortcuts such as `Ctrl+Enter` to run and `Escape` to clear.
-- ✅ Simple per-tool feedback such as thumbs up/down.
+- ✅ Keyboard shortcuts.
+- ✅ Simple per-tool feedback.
 - Progress bars for long operations.
-- ✅ Browser/local-processing badge for tools that work in the browser.
+- ✅ Browser/local-processing badge.
 - ✅ Share button for direct tool links.
-
-## Top 5 Highest-Impact New Tools to Build First
-
-1. ✅ QR Code Generator — high demand and simple to build locally.
-2. ✅ JSON Formatter & Validator — useful for developers every day.
-3. Cover Letter Generator — high user value, but should be API-safe.
-4. ✅ Color Palette Generator — visual, shareable, and designer-friendly.
-5. ✅ Word Counter Pro — upgrades the existing reading-time workflow with deeper analysis.
