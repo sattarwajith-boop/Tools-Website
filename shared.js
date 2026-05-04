@@ -1,4 +1,16 @@
 (function(){
+  var GA_ID='G-S7TGS7QSZW';
+  (function installGoogleTag(){
+    if(window.gtag||document.querySelector('script[src*="googletagmanager.com/gtag/js?id='+GA_ID+'"]'))return;
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=function(){window.dataLayer.push(arguments);};
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+    document.head.appendChild(s);
+    window.gtag('js',new Date());
+    window.gtag('config',GA_ID);
+  })();
   var STORAGE={theme:'tn-theme',fav:'tn-favorites',recent:'tn-recent',rating:'tn-ratings'};
   function safeParse(k,fb){try{return JSON.parse(localStorage.getItem(k))||fb;}catch(e){return fb;}}
   function save(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
