@@ -28,6 +28,7 @@ ToolNest Studio prioritizes fast, browser-powered tools first. API-powered tools
 - Robots.txt Generator added with user-agent rules, allow/disallow paths, crawl delay, sitemap URL, quick presets, copy, robots.txt download, and local processing.
 - Sitemap Generator added with XML sitemap output, URL validation, lastmod, changefreq, priority, quick presets, copy XML, sitemap.xml download, and local processing.
 - Flashcard Maker added with question/answer cards, local deck saving, study mode, flip, next/previous, shuffle, bulk import, CSV export, print, and local processing.
+- Quiz Generator added with multiple-choice question builder, scoring, answer key, sample quiz, bulk import, CSV export, print mode, local saving, and local processing.
 - Global dark/light mode toggle added and saved to `localStorage`.
 - Tool favorites added and saved to `localStorage`.
 - Recently used tools added and saved to `localStorage`.
@@ -123,7 +124,7 @@ ToolNest Studio prioritizes fast, browser-powered tools first. API-powered tools
 
 ### Tier 5 — Education & Productivity
 - ✅ Flashcard Maker
-- Quiz Generator
+- ✅ Quiz Generator
 - Citation Generator
 - Study Schedule Builder
 - Mind Map Creator
