@@ -18,6 +18,7 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 - Hash Generator added with SHA-256, SHA-384, SHA-512, FNV-1a, byte-sum checksum, text file import, copy, TXT export, stats, and local processing.
 - Regex Tester added with pattern testing, global/ignore-case/multiline flags, live matches, replacement preview, copyable report, TXT export, and local processing.
 - Cron Expression Builder added with cron field controls, common presets, plain-English explanation, approximate upcoming run preview, copy cron, copy report, and local processing.
+- JWT Decoder added with local JWT header/payload decoding, common claim inspection, expiry status, sample token, copy JSON, JSON download, and local processing.
 - Global dark/light mode toggle added and saved to `localStorage`.
 - Tool favorites added and saved to `localStorage`.
 - Recently used tools added and saved to `localStorage`.
@@ -89,7 +90,7 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 - ✅ Hash Generator
 - ✅ Regex Tester
 - ✅ Cron Expression Builder
-- JWT Decoder
+- ✅ JWT Decoder
 - CSS Gradient Generator
 - HTML Entity Encoder
 
