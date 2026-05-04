@@ -25,6 +25,7 @@ ToolNest Studio prioritizes fast, browser-powered tools first. API-powered tools
 - Keyword Density Checker added with word frequency, keyword density, two-word phrase analysis, target keyword density, SEO advice, copyable report, CSV export, and local processing.
 - OG Image Previewer added with Open Graph preview, Twitter/X card preview, social image preview, generated OG/Twitter tags, copy, HTML export, and local processing.
 - UTM Link Builder added with UTM source, medium, campaign, term, content fields, quick presets, final URL builder, parameter summary, copy link, Markdown copy, CSV export, and local processing.
+- Robots.txt Generator added with user-agent rules, allow/disallow paths, crawl delay, sitemap URL, quick presets, copy, robots.txt download, and local processing.
 - Global dark/light mode toggle added and saved to `localStorage`.
 - Tool favorites added and saved to `localStorage`.
 - Recently used tools added and saved to `localStorage`.
@@ -115,7 +116,7 @@ ToolNest Studio prioritizes fast, browser-powered tools first. API-powered tools
 - ✅ Keyword Density Checker
 - ✅ OG Image Previewer
 - ✅ UTM Link Builder
-- Robots.txt Generator
+- ✅ Robots.txt Generator
 - Sitemap Generator
 
 ### Tier 5 — Education & Productivity
