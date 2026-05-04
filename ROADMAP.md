@@ -30,6 +30,7 @@ ToolNest Studio prioritizes fast, browser-powered tools first. API-powered tools
 - Flashcard Maker added with question/answer cards, local deck saving, study mode, flip, next/previous, shuffle, bulk import, CSV export, print, and local processing.
 - Quiz Generator added with multiple-choice question builder, scoring, answer key, sample quiz, bulk import, CSV export, print mode, local saving, and local processing.
 - Citation Generator added with APA, MLA, and Chicago-style citation output, website/book/journal/video source types, saved citations, copy, TXT export, and local processing.
+- Study Schedule Builder added with subject rotation, exam date countdown, fixed busy blocks, study/break slots, CSV export, copy plan, print mode, and local processing.
 - Global dark/light mode toggle added and saved to `localStorage`.
 - Tool favorites added and saved to `localStorage`.
 - Recently used tools added and saved to `localStorage`.
@@ -127,7 +128,7 @@ ToolNest Studio prioritizes fast, browser-powered tools first. API-powered tools
 - ✅ Flashcard Maker
 - ✅ Quiz Generator
 - ✅ Citation Generator
-- Study Schedule Builder
+- ✅ Study Schedule Builder
 - Mind Map Creator
 - GPA Calculator
 
