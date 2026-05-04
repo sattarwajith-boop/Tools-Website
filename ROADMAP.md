@@ -27,6 +27,7 @@ ToolNest Studio prioritizes fast, browser-powered tools first. API-powered tools
 - UTM Link Builder added with UTM source, medium, campaign, term, content fields, quick presets, final URL builder, parameter summary, copy link, Markdown copy, CSV export, and local processing.
 - Robots.txt Generator added with user-agent rules, allow/disallow paths, crawl delay, sitemap URL, quick presets, copy, robots.txt download, and local processing.
 - Sitemap Generator added with XML sitemap output, URL validation, lastmod, changefreq, priority, quick presets, copy XML, sitemap.xml download, and local processing.
+- Flashcard Maker added with question/answer cards, local deck saving, study mode, flip, next/previous, shuffle, bulk import, CSV export, print, and local processing.
 - Global dark/light mode toggle added and saved to `localStorage`.
 - Tool favorites added and saved to `localStorage`.
 - Recently used tools added and saved to `localStorage`.
@@ -121,7 +122,7 @@ ToolNest Studio prioritizes fast, browser-powered tools first. API-powered tools
 - ✅ Sitemap Generator
 
 ### Tier 5 — Education & Productivity
-- Flashcard Maker
+- ✅ Flashcard Maker
 - Quiz Generator
 - Citation Generator
 - Study Schedule Builder
