@@ -13,6 +13,7 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 - Countdown Timer & Clock added with live clock, custom target date/time, presets, progress bar, sound alert, copied summary, local saving, and keyboard shortcuts.
 - Random Name Generator added with multiple name types, styles, quantity controls, formatting options, optional keyword, favorites, copy, TXT export, and local processing.
 - Tip Calculator added with tip presets, tax, discount, bill splitting, rounding options, copyable receipt, and local processing.
+- Base64 Encoder / Decoder added with text encoding, text decoding, URL-safe Base64, line splitting, file import, copy, TXT export, validation feedback, and local processing.
 - Global dark/light mode toggle added and saved to `localStorage`.
 - Tool favorites added and saved to `localStorage`.
 - Recently used tools added and saved to `localStorage`.
@@ -79,7 +80,7 @@ ToolNest Studio should continue to prioritize fast, browser-powered tools first.
 
 ### Tier 2 — Developer & Tech Tools
 - ✅ JSON Formatter & Validator
-- Base64 Encoder / Decoder
+- ✅ Base64 Encoder / Decoder
 - URL Encoder / Decoder
 - Hash Generator
 - Regex Tester
