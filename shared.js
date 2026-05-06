@@ -16,10 +16,11 @@
   function announcement(){
     if(qs('.tn-announcement'))return;
     var st=document.createElement('style');
-    st.textContent='.tn-announcement{position:relative;z-index:80;background:linear-gradient(135deg,rgba(6,182,212,.97),rgba(139,92,246,.97));color:#fff;border-bottom:1px solid rgba(255,255,255,.2);box-shadow:0 8px 22px rgba(0,0,0,.18)}.tn-announcement-inner{max-width:1320px;margin:0 auto;padding:.58rem 1.15rem;display:flex;align-items:center;justify-content:center;gap:.6rem;text-align:center;font-size:.82rem;font-weight:600;line-height:1.45}.tn-announcement a{color:#fff;text-decoration:underline;text-underline-offset:3px;font-weight:900}.tn-announcement-icon{flex:0 0 auto}body.has-announcement nav{top:0}@media(max-width:760px){.tn-announcement-inner{font-size:.74rem;padding:.55rem .8rem;align-items:flex-start}}@media print{.tn-announcement{display:none!important}}';
+    st.textContent='.tn-announcement{position:relative;z-index:80;background:linear-gradient(135deg,rgba(6,182,212,.97),rgba(139,92,246,.97));color:#fff;border-bottom:1px solid rgba(255,255,255,.2);box-shadow:0 8px 22px rgba(0,0,0,.18)}.tn-announcement-inner{max-width:1320px;margin:0 auto;padding:.58rem 1.15rem;display:flex;align-items:center;justify-content:center;gap:.6rem;text-align:center;font-size:.82rem;font-weight:600;line-height:1.45}.tn-announcement a{color:#fff;text-decoration:underline;text-underline-offset:3px;font-weight:900}.tn-announcement-icon{flex:0 0 auto}@media(max-width:760px){.tn-announcement-inner{font-size:.74rem;padding:.55rem .8rem;align-items:flex-start}}@media print{.tn-announcement{display:none!important}}';
     document.head.appendChild(st);
     var bar=document.createElement('div');bar.className='tn-announcement';bar.setAttribute('role','status');bar.innerHTML='<div class="tn-announcement-inner"><span class="tn-announcement-icon">📢</span><span><strong>Announcement:</strong> ToolNest Studio is continuously improving. Our team regularly updates and upgrades the tools. If you have an idea to improve an existing tool or want to suggest a new tool, please share your full idea through the <a href="'+rel('contact.html')+'">Contact page</a>. We will review your suggestion and work on useful upgrades as soon as possible.</span></div>';
-    document.body.insertBefore(bar,document.body.firstChild);document.body.classList.add('has-announcement');
+    var main=qs('main');
+    if(main)main.insertBefore(bar,main.firstChild);else document.body.insertBefore(bar,document.body.firstChild);
   }
   function housekeeping(){
     document.documentElement.style.setProperty('--r-lg','22px');
