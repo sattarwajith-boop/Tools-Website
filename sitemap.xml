@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://toolneststudio.online/</loc><lastmod>2026-05-05</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://toolneststudio.online/</loc><lastmod>2026-05-06</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://toolneststudio.online/about.html</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://toolneststudio.online/contact.html</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://toolneststudio.online/blog.html</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -14,8 +14,9 @@
   <url><loc>https://toolneststudio.online/ai-tools.html</loc><lastmod>2026-05-05</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
   <url><loc>https://toolneststudio.online/image-tools.html</loc><lastmod>2026-05-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://toolneststudio.online/productivity-tools.html</loc><lastmod>2026-05-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://toolneststudio.online/finance-tools.html</loc><lastmod>2026-05-05</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://toolneststudio.online/finance-tools.html</loc><lastmod>2026-05-06</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
+  <url><loc>https://toolneststudio.online/tools/currency-converter.html</loc><lastmod>2026-05-06</lastmod><changefreq>daily</changefreq><priority>0.92</priority></url>
   <url><loc>https://toolneststudio.online/tools/gpa-calculator.html</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
   <url><loc>https://toolneststudio.online/tools/citation-generator.html</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
   <url><loc>https://toolneststudio.online/tools/flashcard-maker.html</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
