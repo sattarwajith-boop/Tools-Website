@@ -3,3 +3,4 @@ Allow: /
 
 Sitemap: https://toolneststudio.online/sitemap.xml
 Sitemap: https://toolneststudio.online/sitemap-extra.xml
+Sitemap: https://toolneststudio.online/sitemap-new-tools.xml
